@@ -1,0 +1,27 @@
+.banner-container {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.banner-image {
+  width: 100%;
+  height: 655px;
+  background-image: url("banner.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* padding-top: 66.64%; */
+
+  text-align: center;
+}
+
+.banner-quote {
+  padding-top: 25%;
+  margin: 0;
+  font-size: 4em;
+  font-style: oblique;
+  font-weight: bold;
+  color: var(--brown);
+}

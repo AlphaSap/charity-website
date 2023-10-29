@@ -1,0 +1,48 @@
+.navbar-container {
+  background-color: var(--off-white);
+  height: 6rem;
+  width: auto;
+  display: flex;
+  padding-right: 2em;
+}
+
+.navbar-logo-container {
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 2rem;
+
+  display: flex;
+}
+.navbar-logo-write {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar-logo-write-dholar {
+  margin-left: 2rem;
+  color: var(--green);
+}
+.navbar-logo-write-community {
+  color: var(--brown);
+  margin-left: 0.3rem;
+}
+
+
+.navbar-logo-img {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 4.6rem;
+  height: 4.1rem;
+}
+
+.navbar-link-container {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.navbar-item {
+  padding-left: 2rem;
+  color: var(--black);
+  text-decoration: none;
+}

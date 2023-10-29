@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Outfit&display=swap');
+
+:root {
+
+  --black: #141414;
+  --primary-blue: #4392F1;
+  --off-white: #F5F5F5;
+  --primary-red: #E61E50;
+  --green: #9BC53D;
+  --brown: #483C46;
+
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  font-family: 'Outfit';
+}
+
+p {
+  color: var(--black)
+}
+
+
