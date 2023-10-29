@@ -2,6 +2,7 @@
   width: 100%;
   height: auto;
   position: relative;
+  text-align: center;
 }
 
 .banner-image {
@@ -18,10 +19,27 @@
 }
 
 .banner-quote {
-  padding-top: 25%;
   margin: 0;
-  font-size: 4em;
+  font-size: 1.5em;
   font-style: oblique;
   font-weight: bold;
   color: var(--brown);
+}
+
+.banner-img-two {
+  width: 100%;
+  margin: 0;
+}
+
+.centered {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 768px) {
+  .banner-quote {
+    font-size: 3em;
+  }
 }

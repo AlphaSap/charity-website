@@ -5,11 +5,11 @@ import Navbar from './components/navbar/Navbar'
 
 function App() {
 
+  // <Footer />
   return (
     <>
       <Navbar />
       <Banner />
-      <Footer />
     </>
   )
 }

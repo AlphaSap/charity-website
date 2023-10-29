@@ -26,8 +26,6 @@
   color: var(--brown);
   margin-left: 0.3rem;
 }
-
-
 .navbar-logo-img {
   margin-top: auto;
   margin-bottom: auto;
@@ -40,7 +38,6 @@
   margin-top: auto;
   margin-bottom: auto;
 }
-
 .navbar-item {
   padding-left: 2rem;
   color: var(--black);
