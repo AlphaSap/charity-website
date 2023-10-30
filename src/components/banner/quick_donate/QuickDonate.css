@@ -8,6 +8,10 @@
   justify-content: center;
 }
 
+.qd-mui-selector {
+  padding: 20px;
+}
+
 .qd-p {
   font-size: 1em;
   margin: 0;
