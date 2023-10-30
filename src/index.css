@@ -8,6 +8,7 @@
   --primary-red: #E61E50;
   --green: #9BC53D;
   --brown: #483C46;
+  --font-fam: 'Outfit'
 
 }
 html,
@@ -16,10 +17,11 @@ body {
   padding: 0;
   height: 100%;
 
-  font-family: 'Outfit';
+  font-family: var(--font-fam);
 }
 
 p {
+  font-family: Outfit;
   color: var(--black)
 }
 

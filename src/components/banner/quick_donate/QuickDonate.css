@@ -19,12 +19,28 @@
 }
 
 .qd-selector {
+  outline: none;
+  border-color: var(--blue);
+  border-width: 3px;
+  border-radius: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+
   margin-right: 10px;
 }
 
 .qd-donate {
   background-color: var(--blue);
   color: var(--off-white);
+  border: none;
+  border-radius: 14px;
+  font-size: 0.8em;
+  color: var(--off-white);
+  font-family: var(--font-fam) ;
+}
+
+.qd-donate:active {
+  background-color: blue;
 }
 
 .qd-form {
