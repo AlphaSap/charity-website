@@ -1,0 +1,19 @@
+.card-img img {
+  width: 400px;
+  height: 400px;
+}
+
+.card-title {
+  margin: 0;
+  position: relative;
+  vertical-align: top
+}
+
+.card-conatainer {
+  top: auto;
+  display: inline-block;
+}
+
+.card-conatainer {
+  display: flex;
+}
