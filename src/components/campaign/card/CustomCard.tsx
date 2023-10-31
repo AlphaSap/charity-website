@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
-import { Stack } from "@mui/material";
+import { Grid } from "@mui/material";
 
 interface CardProp {
   name: string;
@@ -13,9 +13,10 @@ interface CardProp {
   date: string;
 }
 
+// <Grid item margin={3} flexGrow={200}>
 function CustomCard(card: CardProp) {
   return (
-    <>
+    <> 
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia sx={{ height: 140 }} image="current.png" title={card.name} />
         <CardContent>
@@ -32,6 +33,7 @@ function CustomCard(card: CardProp) {
       </Card>
     </>
   );
+  // </Grid>
 }
 
 export default CustomCard;

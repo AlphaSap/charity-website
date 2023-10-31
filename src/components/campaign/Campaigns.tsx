@@ -1,6 +1,7 @@
-import { Stack } from "@mui/material";
+import { Box, Grid, Stack } from "@mui/material";
 import CustomCard from "./card/CustomCard";
 import { useEffect, useState } from "react";
+import './Campaigns.css'
 
 type Incident = {
   image: string;
@@ -11,7 +12,7 @@ type Incident = {
   moneyRaised: number;
 };
 
-function CurrentCampaign() {
+function Campaign() {
   const [cc, setCard] = useState("");
 
   const cards = () => {
@@ -21,15 +22,25 @@ function CurrentCampaign() {
   };
   useEffect(() => cards(), []);
 
+  // <Grid container xs="auto" direction="row" spacing={2} sx={{ flexGrow: 1, width: '100%'}} >
+  // </Grid>
   return (
     <>
-      <Stack direction="row" spacing={2}>
-        <CustomCard name={cc.name} text={cc.text} date={cc.date} />
-        <CustomCard name={cc.name} text={cc.text} date={cc.date} />
-        <CustomCard name={cc.name} text={cc.text} date={cc.date} />
-      </Stack>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        marginTop={5}
+        marginBottom={5}
+      >
+        <div className="grid-container">
+          <CustomCard name={cc.name} text={cc.text} date={cc.date} />
+          <CustomCard name={cc.name} text={cc.text} date={cc.date} />
+          <CustomCard name={cc.name} text={cc.text} date={cc.date} />
+        </div>
+      </Box>
     </>
   );
 }
 
-export default CurrentCampaign;
+export default Campaign;
