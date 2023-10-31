@@ -3,17 +3,24 @@ import CustomCard from "./card/CustomCard";
 import { useEffect, useState } from "react";
 import './Campaigns.css'
 
-// type Incident = {
-//   image: string;
-//   name: string;
-//   text: string;
-//   date: string;
-//   peopleHelped: number;
-//   moneyRaised: number;
-// };
+type Incident = {
+  image: string;
+  name: string;
+  text: string;
+  date: string;
+  peopleHelped: number;
+  moneyRaised: number;
+};
 
 function Campaign() {
-  const [cc, setCard] = useState("");
+  const [cc, setCard] = useState<Incident>({
+    image: "",
+    name: "",
+    text: "",
+    date: "",
+    peopleHelped: 0,
+    moneyRaised: 0,
+  });
 
   const cards = () => {
     fetch("incident.json")
