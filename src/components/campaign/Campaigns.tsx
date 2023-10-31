@@ -1,16 +1,16 @@
-import { Box, Grid, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import CustomCard from "./card/CustomCard";
 import { useEffect, useState } from "react";
 import './Campaigns.css'
 
-type Incident = {
-  image: string;
-  name: string;
-  text: string;
-  date: string;
-  peopleHelped: number;
-  moneyRaised: number;
-};
+// type Incident = {
+//   image: string;
+//   name: string;
+//   text: string;
+//   date: string;
+//   peopleHelped: number;
+//   moneyRaised: number;
+// };
 
 function Campaign() {
   const [cc, setCard] = useState("");

@@ -5,7 +5,6 @@ import Button from "@mui/material/Button";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
-import { Grid } from "@mui/material";
 
 interface CardProp {
   name: string;
