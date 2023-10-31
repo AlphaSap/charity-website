@@ -6,6 +6,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import Box from "@mui/material/Box";
+import { TextField } from "@mui/material";
 
 function QuickDonate() {
   const [amount, setAmount] = useState("");
@@ -26,28 +27,19 @@ function QuickDonate() {
             value={amount}
             label="Amount"
             onChange={handleChange}
+            autoWidth
           >
             <MenuItem value={5}>£5</MenuItem>
             <MenuItem value={10}>£10</MenuItem>
             <MenuItem value={20}>£20</MenuItem>
             <MenuItem value={50}>£50</MenuItem>
             <MenuItem value={100}>£100</MenuItem>
+            <MenuItem value={-1}>Custom</MenuItem>
           </Select>
         </FormControl>
       </Box>
-      <form className="qd-form">
-        <input
-          className="qd-input"
-          placeholder="Custom amount"
-          type="text"
-          name="cdonate"
-        />
-      </form>
 
-      <Button size="small" variant="contained" sx={{ fontFamily: 'Outfit'}}>
-        {" "}
-        Donate{" "}
-      </Button>
+      <Button size="small" variant="contained" sx={{ fontFamily: 'Outfit', minWidth: '5%'}}> Donate </Button>
     </div>
   );
 }

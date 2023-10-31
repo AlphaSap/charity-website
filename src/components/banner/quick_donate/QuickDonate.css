@@ -8,6 +8,17 @@
   justify-content: center;
 }
 
+@media (max-width: 660px) {
+  .qd-p {
+    font-size: 0.5rem;
+  }
+
+  .something {
+    width: 90%;
+    font-size: 12rem;
+  }
+}
+
 .qd-mui-selector {
   padding: 20px;
 }

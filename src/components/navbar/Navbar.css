@@ -6,6 +6,13 @@
   padding-right: 2em;
 }
 
+.nav-text-green {
+  color: var(--green);
+}
+.nav-text-brown{
+  color: var(--brown);
+}
+
 .navbar-logo-container {
   margin-right: auto;
   margin-top: auto;
@@ -37,6 +44,25 @@
   margin-top: auto;
   margin-bottom: auto;
 }
+
+@media (max-width: 660px) {
+  .navbar-link-container {
+    display: none;
+  }
+
+  .navbar-logo-img {
+    width: 3.6rem;
+    height: 3.1rem;
+  }
+
+  .navbar-logo-write-dholar {
+    font-size: 1rem;
+  }
+  .navbar-logo-write-community{
+    font-size: 1rem;
+  }
+}
+
 .navbar-item {
   padding-left: 2rem;
   color: var(--black);
