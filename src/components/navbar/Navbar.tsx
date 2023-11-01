@@ -16,19 +16,14 @@ import Button from "@mui/material/Button";
 
 import './Navbar.css'
 
-import AdbIcon from "@mui/icons-material/Adb";
-import { SvgIcon, Tab } from "@mui/material";
+import { Tab } from "@mui/material";
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window;
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["Home", "About", "Contact us"];
 
 export default function MyNav(props: Props) {
   const { window } = props;

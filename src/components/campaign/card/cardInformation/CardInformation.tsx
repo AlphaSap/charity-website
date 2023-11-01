@@ -1,7 +1,4 @@
 import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemText } from "@mui/material";
-import BeachAccessIcon from '@mui/icons-material/BeachAccess';
-import ImageIcon from '@mui/icons-material/Image';
-import WorkIcon from '@mui/icons-material/Work';
 import CurrencyPound from "@mui/icons-material/CurrencyPound";
 import FlightIcon from '@mui/icons-material/Flight';
 

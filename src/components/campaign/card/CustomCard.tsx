@@ -17,14 +17,6 @@ interface CardProp {
 // <Grid item margin={3} flexGrow={200}>
 function CustomCard(card: CardProp) {
 
-  const join_button = () => {
-    const ex_date = Date.parse(card.date);
-    console.log(ex_date)
-    if (isDateBeforeToday(new Date(ex_date))) {
-      return <Button size="small"> Join ex </Button> 
-    }
-  }
-
   return (
     <> 
       <Card sx={{ maxWidth: 345 }}>
