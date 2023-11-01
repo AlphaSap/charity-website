@@ -1,80 +1,125 @@
-import { AppBar, Box, Button, Typography } from "@mui/material";
-import "./Navbar.css";
-import { useState } from "react";
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import MenuIcon from "@mui/icons-material/Menu";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
-function Navbar() {
-  // return (
-  //   <div className="navbar-container">
-  //     <span className="navbar-logo-container">
-  //       <img className="navbar-logo-img" src="logo.svg" />
-  //       <p className="navbar-logo-write navbar-logo-write-dholar">Dholar </p>
-  //       <p className="navbar-logo-write navbar-logo-write-community">Community</p>
-  //     </span>
-  //     <span className="navbar-link-container">
-  //       <a className="navbar-item" href="#">
-  //         Home
-  //       </a>
-  //       <a className="navbar-item" href="#">
-  //         About
-  //       </a>
-  //       <a className="navbar-item" href="#">
-  //         Contact us
-  //       </a>
-  //     </span>
-  //   </div>
-  // );
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-  const pages = ["home", "about", "contact"];
+import './Navbar.css'
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
+import AdbIcon from "@mui/icons-material/Adb";
+import { SvgIcon, Tab } from "@mui/material";
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  return (
-    <AppBar position="sticky" color="inherit">
-      <Box sx={{}}>
-        <Typography
-          variant="h4"
-          noWrap
-          component="a"
-          href="#"
-          sx={{
-            fontWeight: "bold",
-            textDecoration: "none",
-            fontFamily: "Outfit",
-            padding: 2,
-            display: { xs: "flex", md: "inline-flex" },
-          }}
-        >
-          <span className="nav-text-green">Dholar</span>
-          <span className="nav-text-brown"> Community </span>
-        </Typography>
-      </Box>
-      <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-        {pages.map((page) => (
-          <Button
-            key={page}
-            onClick={handleCloseNavMenu}
-            sx={{ my: 2, color: "black", display: "block" }}
-          >
-            {page}
-          </Button>
-        ))}
-      </Box>
-    </AppBar>
-  );
+interface Props {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window?: () => Window;
 }
 
-export default Navbar;
+const drawerWidth = 240;
+const navItems = ["Home", "About", "Contact"];
+
+export default function MyNav(props: Props) {
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
+  const dc = (
+    <span>
+      <span className="logo-green">Dholar</span>{" "}
+      <span className="logo-brown"> Community </span>
+    </span>
+  );
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography fontFamily={"Outfit"} variant="h6" sx={{ my: 2 }}>
+        {dc}
+      </Typography>
+      <Divider />
+      <List>
+        {navItems.map((item) => (
+          <ListItem key={item} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={item} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+  return (
+    <Box >
+      <CssBaseline />
+      <AppBar component="nav" color="inherit">
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Tab icon={<img src="logo.svg"></img>} />
+          <Typography
+            variant="h6"
+            component="div"
+            fontFamily={"Outfit"}
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+          >
+            {dc}
+          </Typography>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {navItems.map((item) => (
+              <Button
+                key={item}
+                sx={{ color: "inherit", fontFamily: "Outfit" }}
+              >
+                {item}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <nav>
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </nav>
+    </Box>
+  );
+}

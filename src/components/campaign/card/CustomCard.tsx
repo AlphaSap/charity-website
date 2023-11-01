@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
+import CardInformation from "./cardInformation/CardInformation";
+
 
 interface CardProp {
   name: string;
@@ -14,6 +16,15 @@ interface CardProp {
 
 // <Grid item margin={3} flexGrow={200}>
 function CustomCard(card: CardProp) {
+
+  const join_button = () => {
+    const ex_date = Date.parse(card.date);
+    console.log(ex_date)
+    if (isDateBeforeToday(new Date(ex_date))) {
+      return <Button size="small"> Join ex </Button> 
+    }
+  }
+
   return (
     <> 
       <Card sx={{ maxWidth: 345 }}>
@@ -25,14 +36,23 @@ function CustomCard(card: CardProp) {
           <Typography variant="body2" color="text.secondary">
             {card.text}
           </Typography>
+          <CardInformation />
         </CardContent>
         <CardActions>
           <Button size="small">donate</Button>
+          <Button size="small">Learn More</Button>
+          <Button size="small" disabled={
+            isDateBeforeToday(new Date(card.date))
+          }> Join expedition </Button>
         </CardActions>
       </Card>
     </>
   );
   // </Grid>
+}
+
+function isDateBeforeToday(date: Date) {
+    return new Date(date.toDateString()) < new Date(new Date().toDateString());
 }
 
 export default CustomCard;

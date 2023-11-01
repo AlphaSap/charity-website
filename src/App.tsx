@@ -1,15 +1,19 @@
 import "./App.css";
 import Banner from "./components/banner/Banner";
 import Footer from "./components/footer/Footer";
-import Navbar from "./components/navbar/Navbar";
 import Campaign from "./components/campaign/Campaigns";
+import MyNav from "./components/navbar/Navbar";
+import { Box, Toolbar } from "@mui/material";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Banner />
-      <Campaign />
+      <MyNav />
+      <Box>
+        <Toolbar />
+        <Banner />
+        <Campaign />
+      </Box>
       <Footer />
     </>
   );
