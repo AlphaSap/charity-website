@@ -9,10 +9,11 @@ function Banner() {
         <Box
           sx={{
             padding: "1rem",
+            maxWidth: "1000px",
           }}
         >
           <Typography fontFamily={"var(--font-fam)"} variant="h4">
-            "Caring Communites, Stronger Tomorrow"
+            Caring Communites, Stronger Tomorrow
           </Typography>
           <Typography
             fontFamily={"var(--font-fam)"}
@@ -20,17 +21,17 @@ function Banner() {
               marginBottom: 1,
             }}
           >
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
+            Join us in making a difference. Together, we build a stronger
+            tomorrow, one act of kindness at a time.
           </Typography>
           <Stack spacing={2} direction="row">
             <Button
               variant="contained"
               sx={{
                 backgroundColor: "var(--green)",
-                color: "var(--black)",
                 "&:hover": {
                   backgroundColor: "var(--hover-green)",
+                  color: "var(--black)",
                 },
               }}
             >

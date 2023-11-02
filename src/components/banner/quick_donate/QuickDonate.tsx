@@ -12,9 +12,9 @@ const theme = createTheme({
   typography: {
     h2: {
       fontFamily: "var(--font-fam)",
-      fontSize: "1.5rem", 
+      fontSize: "1.5rem",
       "@media (max-width: 420px)": {
-        fontSize: "1rem", 
+        fontSize: "1rem",
       },
     },
   },
@@ -63,6 +63,12 @@ function QuickDonate() {
         variant="contained"
         sx={{
           fontFamily: "var(--font-fam)",
+          color: "var(-off-white)",
+          backgroundColor: "var(--green)",
+          "&:hover": {
+            backgroundColor: "var(--hover-green)",
+            color: "var(--black)",
+          },
         }}
       >
         Donate
