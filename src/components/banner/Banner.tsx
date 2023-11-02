@@ -49,7 +49,7 @@ function Banner() {
           </Stack>
         </Box>
         <span className="banner-img-container">
-          <img src="banner.jpg" width={500} />
+          <img className="banner-img" src="banner.jpg" width={500} />
         </span>
       </div>
       <QuickDonate />

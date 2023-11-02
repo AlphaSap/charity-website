@@ -6,7 +6,19 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import Box from "@mui/material/Box";
-import { Stack } from "@mui/material";
+import { Stack, ThemeProvider, Typography, createTheme } from "@mui/material";
+
+const theme = createTheme({
+  typography: {
+    h2: {
+      fontFamily: "var(--font-fam)",
+      fontSize: "1.5rem", 
+      "@media (max-width: 420px)": {
+        fontSize: "1rem", 
+      },
+    },
+  },
+});
 
 function QuickDonate() {
   const [amount, setAmount] = useState("");
@@ -24,8 +36,10 @@ function QuickDonate() {
         minWidth: 100,
       }}
     >
-        <p className="qd-t">Quick Donate</p>
-      <Box sx={{ minWidth: 100}}>
+      <ThemeProvider theme={theme}>
+        <Typography variant="h2">Quick Donate</Typography>
+      </ThemeProvider>
+      <Box sx={{ minWidth: 100 }}>
         <FormControl size="small" fullWidth>
           <InputLabel id="demo-simple-select-label">Amount</InputLabel>
           <Select

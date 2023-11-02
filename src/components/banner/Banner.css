@@ -9,9 +9,8 @@
 
 }
 
-.banner-img-contianer img {
-  width: auto;
-  object-fit: cover;
+.banner-img {
+  padding: 20px;
 }
 
 @media (max-width: 760px) {
@@ -19,10 +18,11 @@
     display: flex;
     flex-direction: column;
   }
-  img {
+  .banner-img {
     width: 100%;
     margin: 0;
     object-fit: cover;
+    padding: 10px;
   }
 }
 
