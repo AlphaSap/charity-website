@@ -11,6 +11,7 @@ function App() {
       <MyNav />
       <Box>
         <Toolbar />
+        <Toolbar />
         <Banner />
         <Campaign />
       </Box>

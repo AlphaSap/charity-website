@@ -63,14 +63,19 @@ export default function MyNav(props: Props) {
   return (
     <Box >
       <CssBaseline />
-      <AppBar component="nav" color="inherit">
+      <AppBar component="nav" sx={{ backgroundColor: "var(--off-white)"}}>
         <Toolbar>
           <IconButton
-            color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{
+              display: { sm: "none" },
+              justifyContent: 'center', 
+              transform: {
+                translate: '-50%, -50%'
+              }
+            }}
           >
             <MenuIcon />
           </IconButton>
@@ -87,7 +92,7 @@ export default function MyNav(props: Props) {
             {navItems.map((item) => (
               <Button
                 key={item}
-                sx={{ color: "inherit", fontFamily: "Outfit" }}
+                sx={{ color: "var(--black)", fontFamily: "Outfit" }}
               >
                 {item}
               </Button>

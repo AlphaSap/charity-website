@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Outfit&display=swap');
 
 :root {
-
   --black: #141414;
   --blue: #4392F1;
   --off-white: #F5F5F5;
   --primary-red: #E61E50;
   --green: #9BC53D;
+  --hover-green: #82a633;
   --brown: #483C46;
-  --font-fam: 'Outfit'
+  --font-fam: 'Outfit';
+
 
 }
 html,
@@ -16,7 +17,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  color: var(--off-white);
 
   font-family: var(--font-fam);
 }

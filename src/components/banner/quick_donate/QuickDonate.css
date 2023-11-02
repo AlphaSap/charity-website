@@ -47,7 +47,7 @@
   border-radius: 14px;
   font-size: 0.8em;
   color: var(--off-white);
-  font-family: var(--font-fam) ;
+  font-family: var(--font-fam);
 }
 
 .qd-donate:active {
@@ -64,10 +64,21 @@
   background-color: var(--off-white);
 }
 [placeholder]:focus::-webkit-input-placeholder {
-    transition: text-indent 0.4s 0.4s ease; 
-    text-indent: -100%;
-    opacity: 1;
- }
+  transition: text-indent 0.4s 0.4s ease;
+  text-indent: -100%;
+  opacity: 1;
+}
+
+.qd-t {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .qd-t {
+    font-size: 1.2rem;
+    display: block;
+  }
+}
 
 @media (min-width: 768px) {
   .qd-p {

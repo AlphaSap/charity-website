@@ -6,19 +6,27 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import Box from "@mui/material/Box";
+import { Stack, Typography, useMediaQuery } from "@mui/material";
 
 function QuickDonate() {
   const [amount, setAmount] = useState("");
   const handleChange = (event: SelectChangeEvent) => {
     setAmount(event.target.value as string);
   };
-
   return (
-    <div className="qd-container">
-      <p className="qd-p"> Quick Donate </p>
-
-      <Box sx={{ minWidth: 100, fontSize:"2em" , marginRight: 2}}>
-        <FormControl fullWidth size="small">
+    <Stack
+      spacing={2}
+      direction={"row"}
+      sx={{
+        justifyContent: "center",
+        boxShadow: 2,
+        padding: 3,
+        minWidth: 100,
+      }}
+    >
+        <p className="qd-t">Quick Donate</p>
+      <Box sx={{ minWidth: 100}}>
+        <FormControl size="small" fullWidth>
           <InputLabel id="demo-simple-select-label">Amount</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -26,7 +34,6 @@ function QuickDonate() {
             value={amount}
             label="Amount"
             onChange={handleChange}
-            autoWidth
           >
             <MenuItem value={5}>£5</MenuItem>
             <MenuItem value={10}>£10</MenuItem>
@@ -37,9 +44,16 @@ function QuickDonate() {
           </Select>
         </FormControl>
       </Box>
-
-      <Button size="small" variant="contained" sx={{ fontFamily: 'Outfit', minWidth: '5%'}}> Donate </Button>
-    </div>
+      <Button
+        size="medium"
+        variant="contained"
+        sx={{
+          fontFamily: "var(--font-fam)",
+        }}
+      >
+        Donate
+      </Button>
+    </Stack>
   );
 }
 
