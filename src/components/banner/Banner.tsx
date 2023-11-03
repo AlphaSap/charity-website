@@ -39,10 +39,13 @@ function Banner() {
             </Button>
             <Button
               variant="outlined"
-              disableRipple
               sx={{
                 borderColor: "var(--brown)",
                 color: "var(--brown)",
+                "&:hover": {
+                  borderColor: "var(--brown)",
+                  color: "var(--black)",
+                },
               }}
             >
               Learn More

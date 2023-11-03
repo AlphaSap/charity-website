@@ -28,7 +28,7 @@ function Qualites() {
           alignItems: "center",
         }}
       >
-        <Typography fontFamily={'var(--font-fam)'} variant="h4" sx={{
+        <Typography fontFamily={'var(--font-fam)'} variant="h3" sx={{
           textAlign: 'center',
           marginBottom: 5,
         }}>
