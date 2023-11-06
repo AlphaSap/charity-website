@@ -29,6 +29,7 @@ function Banner() {
               variant="contained"
               sx={{
                 backgroundColor: "var(--green)",
+                color: 'var(--black)',
                 "&:hover": {
                   backgroundColor: "var(--hover-green)",
                   color: "var(--black)",

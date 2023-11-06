@@ -27,7 +27,7 @@ function QuickDonate() {
   };
   return (
     <Stack
-      spacing={2}
+      spacing={3}
       direction={"row"}
       sx={{
         justifyContent: "center",
@@ -63,7 +63,7 @@ function QuickDonate() {
         variant="contained"
         sx={{
           fontFamily: "var(--font-fam)",
-          color: "var(-off-white)",
+          color: "var(--black)",
           backgroundColor: "var(--green)",
           "&:hover": {
             backgroundColor: "var(--hover-green)",

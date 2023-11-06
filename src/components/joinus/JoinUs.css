@@ -2,3 +2,16 @@
   color: var(--primary-red);
   font-weight: bold;
 }
+
+.img-con {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 760px) {
+  .join-us-img {
+    margin: 0;
+    object-fit: cover;
+    width: 310px;
+  }
+}
