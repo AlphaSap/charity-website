@@ -63,11 +63,11 @@
   border-color: grey;
   background-color: var(--off-white);
 }
-[placeholder]:focus::-webkit-input-placeholder {
-  transition: text-indent 0.4s 0.4s ease;
-  text-indent: -100%;
-  opacity: 1;
-}
+/* [placeholder]:focus::-webkit-input-placeholder { */
+/*   transition: text-indent 0.4s 0.4s ease; */
+/*   text-indent: -100%; */
+/*   opacity: 1; */
+/* } */
 
 .qd-t {
   font-size: 1.5rem;

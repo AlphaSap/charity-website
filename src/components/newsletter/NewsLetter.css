@@ -1,0 +1,15 @@
+.news-input {
+  background-color: var(--black);
+  padding: 10px;
+  padding-right: 50px;
+  color: var(--off-white);
+  font-family: var(--font-fam);
+  outline: 0;
+  border-width: 0 0 2px;
+  margin-top: 10px;
+  font-size: 1rem;
+  border-color: var(--gray);
+
+  margin-right: 5px;
+  margin-bottom: 10px;
+}

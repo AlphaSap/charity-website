@@ -6,6 +6,7 @@ import MyNav from "./components/navbar/Navbar";
 import { Box, Divider, Toolbar } from "@mui/material";
 import Qualites from "./components/qualities/Qualites";
 import JoinUs from "./components/joinus/JoinUs";
+import NewsLetter from "./components/newsletter/NewsLetter";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Qualites />
         <Divider />
         <JoinUs />
+        <NewsLetter />
       </Box>
       <Footer />
     </>
