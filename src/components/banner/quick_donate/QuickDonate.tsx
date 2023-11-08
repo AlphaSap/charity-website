@@ -37,7 +37,12 @@ function QuickDonate() {
       }}
     >
       <ThemeProvider theme={theme}>
-        <Typography variant="h2">Quick Donate</Typography>
+        <Typography sx={{
+          justifySelf: 'center',
+          display: 'flex',
+          alignSelf: 'center'
+
+        }} variant="h2">Quick Donate</Typography>
       </ThemeProvider>
       <Box sx={{ minWidth: 100 }}>
         <FormControl size="small" fullWidth>

@@ -1,6 +1,7 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, ThemeProvider, Typography } from "@mui/material";
 
 import "./JoinUs.css";
+import getTheme from "../../theme";'../../theme.tsx'
 
 function JoinUs() {
 
@@ -16,6 +17,7 @@ function JoinUs() {
         direction={"row"}
       >
         <Box>
+          <ThemeProvider theme={getTheme()}>
           <Typography
             variant="h3"
             fontFamily={"var(--font-fam)"}
@@ -33,6 +35,7 @@ function JoinUs() {
             touch lives, create bonds, and be a force for positive change.
             <span className="red-text"> Join us today! </span>
           </Typography>
+          </ThemeProvider>
           <Button
             variant="outlined"
             size="large"

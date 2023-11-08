@@ -72,10 +72,4 @@ function NewsLetter() {
   );
 }
 
-// function showAl(al: boolean) {
-//   return al ? (
-//
-//   ) : null;
-// }
-
 export default NewsLetter;
