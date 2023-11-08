@@ -6,7 +6,7 @@ function getTheme() {
       fontFamily: "var(--font-fam)",
       h3: {
         "@media (max-width: 420px)": {
-          fontSize: "1.5rem",
+          fontSize: "2rem",
         },
       },
       body1: {

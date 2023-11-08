@@ -1,6 +1,6 @@
-import { Divider, Stack, Typography } from "@mui/material";
+import { Divider, Stack, ThemeProvider, Typography } from "@mui/material";
 import Quotes from "./Quotes";
-
+import getTheme from "../../theme";
 
 const quo = [
   {
@@ -28,12 +28,18 @@ function Qualites() {
           alignItems: "center",
         }}
       >
-        <Typography fontFamily={'var(--font-fam)'} variant="h3" sx={{
-          textAlign: 'center',
-          marginBottom: 5,
-        }}>
+        <ThemeProvider theme={getTheme()}>
+        <Typography
+          fontFamily={"var(--font-fam)"}
+          variant="h3"
+          sx={{
+            textAlign: "center",
+            marginBottom: 5,
+          }}
+        >
           Our Three Pillars of Impact
         </Typography>
+        </ThemeProvider>
         <Stack
           spacing={2}
           sx={{

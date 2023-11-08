@@ -17,7 +17,7 @@ function Quotes(p: QuotesProp) {
           style={{
             backgroundColor: "var(--gray)",
             borderLeft: "5px solid var(--blue)",
-            padding: 11,
+            padding: 10,
           }}
           xs
         >
