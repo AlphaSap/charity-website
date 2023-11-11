@@ -13,14 +13,16 @@ function App() {
     <>
       <MyNav />
       <Box>
-        <Toolbar />
-        <Toolbar />
-        <Banner />
-        <Campaign />
-        <Qualites />
-        <Divider />
-        <JoinUs />
-        <NewsLetter />
+        <main>
+          <Toolbar />
+          <Toolbar />
+          <Banner />
+          <Campaign />
+          <Qualites />
+          <Divider />
+          <JoinUs />
+          <NewsLetter />
+        </main>
       </Box>
       <Footer />
     </>

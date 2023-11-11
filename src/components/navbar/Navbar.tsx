@@ -82,7 +82,7 @@ export default function MyNav(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <Tab icon={<img src="logo.svg"></img>} />
+          <Tab icon={<CustomLink to="/"><img src="logo.svg"></img> </CustomLink>} />
           <Typography
             variant="h6"
             component="div"
@@ -94,11 +94,12 @@ export default function MyNav(props: Props) {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((val, idx) => (
               <Button
+                onClick={() => <CustomLink to="/join"> </CustomLink>}
                 key={idx}
                 sx={{ color: "var(--black)", fontFamily: "Outfit" }}
               >
                 {/* TODO: make the navItems array have an object that contains the route the name */}
-                {<CustomLink to="/"> {val} </CustomLink>}
+                {val}
               </Button>
             ))}
           </Box>

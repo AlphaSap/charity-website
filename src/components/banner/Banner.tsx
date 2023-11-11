@@ -1,7 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import "./Banner.css";
 import QuickDonate from "./quick_donate/QuickDonate";
-import { Link } from "react-router-dom";
+import CustomLink from "../CustomLink";
 
 function Banner() {
   return (
@@ -26,21 +26,21 @@ function Banner() {
             tomorrow, one act of kindness at a time.
           </Typography>
           <Stack spacing={2} direction="row">
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "var(--green)",
-                color: 'var(--black)',
-                "&:hover": {
-                  backgroundColor: "var(--hover-green)",
+            <CustomLink to="/join">
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "var(--green)",
                   color: "var(--black)",
-                },
-              }}
-            >
-              <Link to={'/join'} style={{ textDecoration: 'none', color: 'inherit' }}>
-              Join Now!
-              </Link>
-            </Button>
+                  "&:hover": {
+                    backgroundColor: "var(--hover-green)",
+                    color: "var(--black)",
+                  },
+                }}
+              >
+                Join Now!
+              </Button>
+            </CustomLink>
             <Button
               variant="outlined"
               sx={{
