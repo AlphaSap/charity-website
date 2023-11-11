@@ -11,7 +11,7 @@ function getTheme() {
       },
       body1: {
         "@media (max-width: 420px)": {
-          fontSize: "1rem",
+          fontSize: "1.1rem",
         },
       },
       h2: {

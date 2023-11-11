@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import CustomCard from "./card/CustomCard";
 import { useEffect, useState } from "react";
-import './Campaigns.css'
+import "./Campaigns.css";
 
 type Incident = {
   image: string;
@@ -13,14 +13,16 @@ type Incident = {
 };
 
 function Campaign() {
-  const [cc, setCard] = useState<Incident>({
-    image: "",
-    name: "",
-    text: "",
-    date: "",
-    peopleHelped: 0,
-    moneyRaised: 0,
-  });
+  const [cc, setCard] = useState<Incident[]>([
+    {
+      image: "",
+      name: "",
+      text: "",
+      date: "",
+      peopleHelped: 0,
+      moneyRaised: 0,
+    },
+  ]);
 
   const cards = () => {
     fetch("incident.json")
@@ -31,6 +33,9 @@ function Campaign() {
 
   // <Grid container xs="auto" direction="row" spacing={2} sx={{ flexGrow: 1, width: '100%'}} >
   // </Grid>
+  // <CustomCard name={cc.name} text={cc.text} date={cc.date} />
+  // <CustomCard name={cc.name} text={cc.text} date={cc.date} />
+  // <CustomCard name={cc.name} text={cc.text} date={cc.date} />
   return (
     <>
       <Box
@@ -41,9 +46,9 @@ function Campaign() {
         marginBottom={5}
       >
         <div className="grid-container">
-          <CustomCard name={cc.name} text={cc.text} date={cc.date} />
-          <CustomCard name={cc.name} text={cc.text} date={cc.date} />
-          <CustomCard name={cc.name} text={cc.text} date={cc.date} />
+          {
+            cc.map((value, index) => <CustomCard name={value.name} text={value.text} date={value.date} key={index} />)
+          }
         </div>
       </Box>
     </>

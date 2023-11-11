@@ -3,45 +3,6 @@ import "./Footer.css";
 import { Facebook, GitHub, Instagram} from "@mui/icons-material";
 
 function Footer() {
-  // return (
-  //   <>
-  //     <Box
-  //       sx={{
-  //         backgroundColor: "var(--gray)",
-  //         display: "flex",
-  //         paddingLeft: "1rem",
-  //         paddingTop: "1rem",
-  //       }}
-  //     >
-  //       <Stack>
-  //         <Box>
-  //           <Typography variant="h6" fontWeight={'bold'}>Contact us</Typography>
-  //           <Typography>
-  //             <span className="footer-bold">Address</span>: 17 ONRA ROAD <br />
-  //             LONDON E17 8JD
-  //           </Typography>
-  //         </Box>
-  //         <Box>
-  //           <Typography> <span className="footer-bold">Email</span>: example@mail.com </Typography>
-  //           <Typography> <span className="footer-bold">Phone</span>: +44 07428820281</Typography>
-  //         </Box>
-  //       </Stack>
-  //     </Box>
-  //     <Box
-  //       sx={{
-  //         backgroundColor: "var(--gray)",
-  //         display: "flex",
-  //         justifyContent: "center",
-  //         alignItems: "center",
-  //       }}
-  //     >
-  //       <Typography marginY={2}>
-  //         Copyright ©️ <Link>Dholar Community</Link> 2023
-  //       </Typography>
-  //     </Box>
-  //   </>
-  // );
-
   return (
     <Box
       component="footer"

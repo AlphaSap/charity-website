@@ -14,9 +14,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-import './Navbar.css'
+import "./Navbar.css";
 
 import { Tab } from "@mui/material";
+import CustomLink from "../CustomLink";
 
 interface Props {
   window?: () => Window;
@@ -33,10 +34,12 @@ export default function MyNav(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
   const dc = (
-    <span>
-      <span className="logo-green">Dholar</span>{" "}
-      <span className="logo-brown"> Community </span>
-    </span>
+    <CustomLink to="/">
+      <span>
+        <span className="logo-green">Dholar</span>{" "}
+        <span className="logo-brown"> Community </span>
+      </span>
+    </CustomLink>
   );
 
   const drawer = (
@@ -61,9 +64,9 @@ export default function MyNav(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box >
+    <Box>
       <CssBaseline />
-      <AppBar component="nav" sx={{ backgroundColor: "var(--off-white)"}}>
+      <AppBar component="nav" sx={{ backgroundColor: "var(--off-white)" }}>
         <Toolbar>
           <IconButton
             aria-label="open drawer"
@@ -71,10 +74,10 @@ export default function MyNav(props: Props) {
             onClick={handleDrawerToggle}
             sx={{
               display: { sm: "none" },
-              justifyContent: 'center', 
+              justifyContent: "center",
               transform: {
-                translate: '-50%, -50%'
-              }
+                translate: "-50%, -50%",
+              },
             }}
           >
             <MenuIcon />
@@ -89,12 +92,13 @@ export default function MyNav(props: Props) {
             {dc}
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
+            {navItems.map((val, idx) => (
               <Button
-                key={item}
+                key={idx}
                 sx={{ color: "var(--black)", fontFamily: "Outfit" }}
               >
-                {item}
+                {/* TODO: make the navItems array have an object that contains the route the name */}
+                {<CustomLink to="/"> {val} </CustomLink>}
               </Button>
             ))}
           </Box>

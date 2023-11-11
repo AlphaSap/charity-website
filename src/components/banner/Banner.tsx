@@ -1,6 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import "./Banner.css";
 import QuickDonate from "./quick_donate/QuickDonate";
+import { Link } from "react-router-dom";
 
 function Banner() {
   return (
@@ -36,7 +37,9 @@ function Banner() {
                 },
               }}
             >
+              <Link to={'/join'} style={{ textDecoration: 'none', color: 'inherit' }}>
               Join Now!
+              </Link>
             </Button>
             <Button
               variant="outlined"

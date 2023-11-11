@@ -1,4 +1,5 @@
-  {
+[
+{
     "image": "current.png",
     "name": "Moroco earthquake",
     "text": "skhdjlajsdhalksjd fldaksfh lksjdfhsdlkjfh lksjdfhklsjdfhkl jshfklsdjhfksjd fhklsjdhfkldjsfh skljd",
@@ -6,4 +7,14 @@
     "peopleHelped": 69,
     "moneyRaised": 5000
 
+  },
+  {
+
+    "image": "current.png",
+    "name": "Turkey and Syria earthquake",
+    "text": " shdj sjdh sjhd asljhd sljhd asljdh asljdh asljdhas ",
+    "date": "2023-04-11T10:20:30Z",
+    "peopleHelped": 42,
+    "moneyRaised": 10000 
   }
+]

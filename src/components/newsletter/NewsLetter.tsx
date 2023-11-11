@@ -8,8 +8,7 @@ function NewsLetter() {
 
   const sendValue = () => {
     //TODO:
-    console.log(value);
-    setValue("");
+    setValue(value);
     setAl(true);
   };
 
@@ -54,9 +53,13 @@ function NewsLetter() {
         >
           SIGN UP
         </Button>
-        <Snackbar autoHideDuration={1500} open={al} onClose={() => {
-          setAl(false)
-        }}>
+        <Snackbar
+          autoHideDuration={1500}
+          open={al}
+          onClose={() => {
+            setAl(false);
+          }}
+        >
           <Alert
             sx={{
               marginTop: "5px",
@@ -64,7 +67,7 @@ function NewsLetter() {
             }}
             severity="success"
           >
-            Subscribed!
+            Success!
           </Alert>
         </Snackbar>
       </Box>
