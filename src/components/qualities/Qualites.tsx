@@ -46,8 +46,8 @@ function Qualites() {
             alignItems: "start",
           }}
         >
-          {quo.map((x) => (
-            <Quotes logo={x.logo} text={x.text} />
+          {quo.map((x, idx) => (
+            <Quotes logo={x.logo} key={idx} text={x.text} />
           ))}
         </Stack>
       </Stack>

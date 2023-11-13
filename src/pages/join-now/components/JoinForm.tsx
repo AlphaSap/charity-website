@@ -14,15 +14,70 @@ import { useState } from "react";
 import ReactPhoneInput from "react-phone-input-material-ui";
 import getTheme from "../../../theme";
 
-const countries = ["india", "US", "jp"];
+const countries = [
+  "India",
+  "United States of America",
+  "Japan",
+  "United Kingdom",
+];
 const theme = getTheme();
 
+type PersonalInformation = {
+  firstname: InformationField<string>;
+  lastname: InformationField<string>;
+  email: InformationField<string>;
+  phone?: InformationField<string>;
+};
+
+type InformationField<T> = {
+  value?: T;
+  error: boolean;
+};
+
+type AddressInformation = {
+  address_one: InformationField<string>;
+  address_two?: InformationField<string>;
+  city: InformationField<string>;
+  state?: InformationField<string>;
+  postal_code: InformationField<string>;
+  country: InformationField<string>;
+};
+
 function JoinForm() {
-  const [value, _setValue] = useState();
   const [open, setOpen] = useState(false);
+
+  const [personal_info, setPI] = useState<PersonalInformation>({
+    firstname: { error: false, value: "" },
+    lastname: { error: false, value: "" },
+    email: { error: false, value: "" },
+    phone: { error: false, value: undefined },
+  });
+  const [address_info, setAI] = useState<AddressInformation>({
+    address_one: { error: false, value: "" },
+    address_two: { error: false, value: undefined },
+    city: { error: false, value: "" },
+    state: { error: false, value: undefined },
+    postal_code: { error: false, value: "" },
+    country: { error: false, value: countries[-1] },
+  });
+  const [message, setMessage] = useState("");
 
   const handleOpen = () => {
     setOpen(true);
+
+    for (const add in address_info) {
+      const oldInfo: InformationField<string> = address_info[add];
+      if (oldInfo.value === "" || oldInfo.value === undefined) {
+        oldInfo.error = true;
+      }
+      for (const add in personal_info) {
+        const oldInfo: InformationField<string> = personal_info[add];
+        if (oldInfo.value === "" || oldInfo.value === undefined) {
+          oldInfo.error = true;
+        }
+      }
+    }
+
     setTimer();
   };
   const handleClose = () => {
@@ -80,40 +135,69 @@ function JoinForm() {
           </Grid>
           <Grid item xs={6}>
             <TextField
+              error={personal_info.firstname.error}
               required
               fullWidth
               size="medium"
               id="first-name"
               label="First Name"
+              value={personal_info.firstname.value}
+              onChange={(e) => {
+                setPI((prev) => ({
+                  ...prev,
+                  firstname: { error: false, value: e.target.value },
+                }));
+              }}
             />
           </Grid>
 
           <Grid item xs={6}>
             <TextField
               fullWidth
+              error={personal_info.lastname.error}
               required
               id="last-name"
               size="medium"
               label="Last Name"
+              onChange={(e) => {
+                setPI((prev) => ({
+                  ...prev,
+                  lastname: { error: false, value: e.target.value },
+                }));
+              }}
+              value={personal_info.lastname.value}
             />
           </Grid>
 
           <Grid item xs={12} md={6}>
             <TextField
               fullWidth
+              error={personal_info.email.error}
               required
               id="email"
               size="medium"
               label="Email"
+              value={personal_info.email.value}
+              onChange={(e) => {
+                setPI((prev) => ({
+                  ...prev,
+                  email: { error: false, value: e.target.value },
+                }));
+              }}
             />
           </Grid>
           <Grid item xs={12} md={6}>
             <ReactPhoneInput
-              value={value}
-              onChange={() => console.log(value)} // passed function receives the phone value
+              value={personal_info.phone?.value}
               component={TextField}
               country={"gb"}
               placeholder=""
+              onChange={(e) => {
+                setPI((prev) => ({
+                  ...prev,
+                  phone: { error: false, value: e.value },
+                }));
+              }}
             />
           </Grid>
           <Grid item xs={12}>
@@ -129,10 +213,18 @@ function JoinForm() {
           <Grid item xs={12}>
             <TextField
               fullWidth
+              error={address_info.address_one.error}
               required
               id="address-one"
               size="medium"
               label="Address Line One"
+              value={address_info.address_one.value}
+              onChange={(e) => {
+                setAI((prev) => ({
+                  ...prev,
+                  address_one: { error: false, value: e.target.value },
+                }));
+              }}
             />
           </Grid>
           <Grid item xs={12}>
@@ -141,18 +233,46 @@ function JoinForm() {
               id="address-two"
               size="medium"
               label="Address Line two"
+              value={address_info.address_two?.value}
+              onChange={(e) => {
+                setAI((prev) => ({
+                  ...prev,
+                  address_two: { error: false, value: e.target.value },
+                }));
+              }}
             />
           </Grid>
           <Grid item xs={12} md={6}>
-            <TextField fullWidth id="city" size="medium" label="City" />
+            <TextField
+              value={address_info.city.value}
+              error={address_info.city.error}
+              required
+              fullWidth
+              id="city"
+              size="medium"
+              label="City"
+              onChange={(e) => {
+                setAI((prev) => ({
+                  ...prev,
+                  city: { error: false, value: e.target.value },
+                }));
+              }}
+            />
           </Grid>
 
           <Grid item xs={12} md={6}>
             <TextField
+              value={address_info.state?.value}
               fullWidth
               id="state"
               size="medium"
               label="State/Province/Region"
+              onChange={(e) => {
+                setAI((prev) => ({
+                  ...prev,
+                  state: { error: false, value: e.target.value },
+                }));
+              }}
             />
           </Grid>
 
@@ -160,8 +280,17 @@ function JoinForm() {
             <TextField
               fullWidth
               id="postal-code"
+              error={address_info.postal_code.error}
               size="medium"
-              label="Postcode/Zipcode"
+              required
+              label="Postcode"
+              value={address_info.state?.value}
+              onChange={(e) => {
+                setAI((prev) => ({
+                  ...prev,
+                  postal_code: { error: false, value: e.target.value },
+                }));
+              }}
             />
           </Grid>
 
@@ -170,9 +299,20 @@ function JoinForm() {
               disablePortal
               id="combo-box-demo"
               options={countries}
+              defaultValue={"United Kingdom"}
               renderInput={(params) => (
-                <TextField {...params} label="Countries" />
+                <TextField
+                  {...params}
+                  label="Country"
+                  onChange={(e) => {
+                    setAI((prev) => ({
+                      ...prev,
+                      country: { error: false, value: e.target.value },
+                    }));
+                  }}
+                />
               )}
+              value={address_info.country.value}
             />
           </Grid>
           <Grid item xs={12}>
@@ -192,6 +332,8 @@ function JoinForm() {
               multiline
               fullWidth
               variant="standard"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </Grid>
           <Grid
@@ -225,7 +367,7 @@ function JoinForm() {
             >
               <CircularProgress color="inherit" />
             </Backdrop>
-            <Button variant="text" > Go Back </Button>
+            <Button variant="text"> Go Back </Button>
           </Grid>
         </Grid>
       </ThemeProvider>
