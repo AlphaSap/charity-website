@@ -1,4 +1,5 @@
 import {
+    Alert,
   Autocomplete,
   Backdrop,
   Box,
@@ -6,6 +7,7 @@ import {
   CircularProgress,
   Divider,
   Grid,
+  Snackbar,
   TextField,
   ThemeProvider,
   Typography,
@@ -13,6 +15,7 @@ import {
 import { useState } from "react";
 import ReactPhoneInput from "react-phone-input-material-ui";
 import getTheme from "../../../theme";
+import { useNavigate } from "react-router-dom";
 
 const countries = [
   "India",
@@ -45,6 +48,7 @@ type AddressInformation = {
 
 function JoinForm() {
   const [open, setOpen] = useState(false);
+  const history = useNavigate();
 
   const [personal_info, setPI] = useState<PersonalInformation>({
     firstname: { error: false, value: "" },
@@ -58,40 +62,51 @@ function JoinForm() {
     city: { error: false, value: "" },
     state: { error: false, value: undefined },
     postal_code: { error: false, value: "" },
-    country: { error: false, value: countries[-1] },
+    country: { error: false, value: countries[3] },
   });
   const [message, setMessage] = useState("");
+  const [alert, setAlert] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
+    let go_back = true;
 
     for (const add in address_info) {
+      if (add === "address_two" || add === "state") {
+        continue;
+      }
       //@ts-ignore
       const oldInfo: InformationField<string> = address_info[add];
       if (oldInfo.value === "" || oldInfo.value === undefined) {
         oldInfo.error = true;
+        go_back = false;
       }
-      for (const add in personal_info) {
-        //@ts-ignore
-        const oldInfo: InformationField<string> = personal_info[add];
-        if (oldInfo.value === "" || oldInfo.value === undefined) {
-          oldInfo.error = true;
-        }
+    }
+    for (const add in personal_info) {
+      if (add === "phone") {
+        continue;
+      }
+      //@ts-ignore
+      const oldInfo: InformationField<string> = personal_info[add];
+      if (oldInfo.value === "" || oldInfo.value === undefined) {
+        oldInfo.error = true;
+        go_back = false;
       }
     }
 
-    setTimer();
+    setTimeout(function () {
+      handleClose();
+      if (go_back) {
+        history("/");
+      } else {
+        setAlert(true)
+      }
+    }, 1000);
+
+    console.log("Before");
   };
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const setTimer = () => {
-    setTimeout(function () {
-      handleClose();
-      //TODO: add a alert and link back to home page
-      console.log("ksdh");
-    }, 1000);
   };
 
   return (
@@ -370,7 +385,24 @@ function JoinForm() {
             >
               <CircularProgress color="inherit" />
             </Backdrop>
-            <Button variant="text"> Go Back </Button>
+
+            <Snackbar
+              autoHideDuration={1500}
+              open={alert}
+              onClose={() => {
+                setAlert(false);
+              }}
+            >
+              <Alert
+                sx={{
+                  marginTop: "5px",
+                  padding: 1,
+                }}
+                severity="error"
+              >
+                Enter all the required fields
+              </Alert>
+            </Snackbar>
           </Grid>
         </Grid>
       </ThemeProvider>

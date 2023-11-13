@@ -15,3 +15,13 @@ const CustomLink = (prop: CustomLinkProp) => {
 };
 
 export default CustomLink;
+
+interface ConditionalLinkProp {
+  to: string, 
+  children?: ReactNode,
+  condition: boolean,
+}
+
+export function ConditionalLink(props: ConditionalLinkProp) {
+  return !!props.condition && props.to ? <Link {...props}>{props.children}</Link> : <>{props.children}</>
+}
