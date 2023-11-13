@@ -66,11 +66,13 @@ function JoinForm() {
     setOpen(true);
 
     for (const add in address_info) {
+      //@ts-ignore
       const oldInfo: InformationField<string> = address_info[add];
       if (oldInfo.value === "" || oldInfo.value === undefined) {
         oldInfo.error = true;
       }
       for (const add in personal_info) {
+        //@ts-ignore
         const oldInfo: InformationField<string> = personal_info[add];
         if (oldInfo.value === "" || oldInfo.value === undefined) {
           oldInfo.error = true;
@@ -195,6 +197,7 @@ function JoinForm() {
               onChange={(e) => {
                 setPI((prev) => ({
                   ...prev,
+                  //@ts-ignore
                   phone: { error: false, value: e.value },
                 }));
               }}
