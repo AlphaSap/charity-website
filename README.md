@@ -1,4 +1,4 @@
-# Charity Website for a Dholar Community 
+# Charity Website for Dholar Community 
 
 
 
