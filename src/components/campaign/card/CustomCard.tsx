@@ -7,20 +7,19 @@ import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
 import CardInformation from "./cardInformation/CardInformation";
 
-
 interface CardProp {
   name: string;
   text: string;
   date: string;
+  image: string;
 }
 
 // <Grid item margin={3} flexGrow={200}>
 function CustomCard(card: CardProp) {
-
   return (
-    <> 
+    <>
       <Card sx={{ maxWidth: 345 }}>
-        <CardMedia sx={{ height: 140 }} image="current.png" title={card.name} />
+        <CardMedia sx={{ height: 250 }} image={card.image} title={card.name} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {card.name}
@@ -30,12 +29,16 @@ function CustomCard(card: CardProp) {
           </Typography>
           <CardInformation />
         </CardContent>
-        <CardActions>
+        <CardActions sx={{ marginTop: "auto" }}>
           <Button size="small">donate</Button>
           <Button size="small">Learn More</Button>
-          <Button size="small" disabled={
-            isDateBeforeToday(new Date(card.date))
-          }> Join expedition </Button>
+          <Button
+            size="small"
+            disabled={isDateBeforeToday(new Date(card.date))}
+          >
+            {" "}
+            Join expedition{" "}
+          </Button>
         </CardActions>
       </Card>
     </>
@@ -44,7 +47,7 @@ function CustomCard(card: CardProp) {
 }
 
 function isDateBeforeToday(date: Date) {
-    return new Date(date.toDateString()) < new Date(new Date().toDateString());
+  return new Date(date.toDateString()) < new Date(new Date().toDateString());
 }
 
 export default CustomCard;

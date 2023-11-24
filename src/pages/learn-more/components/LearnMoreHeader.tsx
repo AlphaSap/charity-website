@@ -1,0 +1,53 @@
+import { Typography, Box, Stack, colors } from "@mui/material";
+import "./LearnMoreHeader.css";
+
+function LearnMoreHeader() {
+  return (
+    <>
+      <Stack
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        gap={2}
+      >
+        <Typography variant="h2" sx={{ fontWeight: "bold" }}>
+          <span className="text-green">Dholar</span>{" "}
+          <span className="text-brown">Community</span>
+        </Typography>
+
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            paddingX: 2,
+          }}
+        >
+          <Typography
+            sx={{
+              textAlign: "center",
+              lineHeight: "136%",
+              width: { xs: "70%", md: "50%" },
+              paddingBottom: { xs: 0, md: 10 },
+            }}
+          >
+            Thank you for visiting Dholar Community, where compassion meets
+            action, and hope is a shared commitment. As a Muslim charity
+            organization, we stand united in our mission to extend a helping
+            hand to those affected by natural disasters and crises, irrespective
+            of their background or beliefs. Our journey is guided by the
+            principles of empathy, unity, and the Islamic values of charity,
+            driving us to make a positive impact on the lives of those facing
+            adversity.
+          </Typography>
+          <img src="hero.png" />
+        </Stack>
+      </Stack>
+    </>
+  );
+}
+
+export default LearnMoreHeader;

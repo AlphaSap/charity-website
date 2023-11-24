@@ -30,6 +30,8 @@ function NewsLetter() {
           SIGN UP TO OUR NEWSLETTER
         </Typography>
 
+        <Box >
+
         <input
           placeholder="ENTER YOUR EMAIL"
           type="text"
@@ -53,6 +55,7 @@ function NewsLetter() {
         >
           SIGN UP
         </Button>
+        </Box >
         <Snackbar
           autoHideDuration={1500}
           open={al}

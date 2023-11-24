@@ -8,6 +8,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import LearnMore from './pages/learn-more/LearnMore.tsx';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/join",
     element: <JoinNowApp />
+  },
+  {
+    path: "/about",
+    element: <LearnMore />
   }
 ])
 

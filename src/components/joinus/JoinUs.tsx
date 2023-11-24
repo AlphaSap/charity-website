@@ -1,10 +1,11 @@
 import { Box, Button, Stack, ThemeProvider, Typography } from "@mui/material";
 
 import "./JoinUs.css";
-import getTheme from "../../theme";'../../theme.tsx'
+import getTheme from "../../theme";
+import CustomLink from "../CustomLink";
+("../../theme.tsx");
 
 function JoinUs() {
-
   return (
     <>
       <Stack
@@ -18,39 +19,45 @@ function JoinUs() {
       >
         <Box>
           <ThemeProvider theme={getTheme()}>
-          <Typography
-            variant="h3"
-            fontFamily={"var(--font-fam)"}
-            fontWeight={"bold"}
-            margin={1}
-          >
-            Join us!
-          </Typography>
-          <Typography
-            fontFamily={"var(--font-fam)"}
-            margin={1}
-            fontSize={"1.5rem"}
-          >
-            Discover the profound joy of giving back as a volunteer, you’ll
-            touch lives, create bonds, and be a force for positive change.
-            <span className="red-text"> Join us today! </span>
-          </Typography>
+            <Typography
+              variant="h3"
+              fontFamily={"var(--font-fam)"}
+              fontWeight={"bold"}
+              margin={1}
+            >
+              Join us!
+            </Typography>
+            <Typography
+              fontFamily={"var(--font-fam)"}
+              margin={1}
+              fontSize={"1.2rem"}
+            >
+              Together, let's create a world where 
+              compassion knows no bounds, and every individual can find solace
+              in the helping hands of a caring community.
+              Discover the profound joy of giving back as a volunteer, you’ll
+              touch lives, create bonds, and be a force for positive change.
+              <span className="red-text"> Join us today! </span>
+            </Typography>
           </ThemeProvider>
-          <Button
-            variant="outlined"
-            size="large"
-            sx={{
-              margin: 1,
-              borderColor: "var(--brown)",
-              color: "var(--brown)",
-              "&:hover": {
+          <CustomLink to="/join">
+            <Button
+              variant="outlined"
+              size="large"
+              sx={{
+                margin: 1,
                 borderColor: "var(--brown)",
-                color: "var(--black)",
-              },
-            }}
-          >
-            Join us
-          </Button>
+                color: "var(--brown)",
+                "&:hover": {
+                  borderColor: "var(--brown)",
+                  color: "var(--black)",
+                },
+                marginBottom: 3,
+              }}
+            >
+            Become a volunteer
+            </Button>
+          </CustomLink>
         </Box>
         <span className="img-con">
           <img className="join-us-img" src="joinus.png" width={"450vh"} />
@@ -58,59 +65,6 @@ function JoinUs() {
       </Stack>
     </>
   );
-
-  // return (
-  //   <>
-  //     <Grid container sx={{ padding: "9rem", paddingTop: "3rem" }} direction={{
-  //       xs: 'column',
-  //       md: 'row'
-  //     }}>
-  //       <Grid item xs>
-  //         <Typography
-  //           variant="h3"
-  //           fontFamily={"var(--font-fam)"}
-  //           fontWeight={"bold"}
-  //           margin={1}
-  //         >
-  //           Join us!
-  //         </Typography>
-  //         <Typography
-  //           fontFamily={"var(--font-fam)"}
-  //           margin={1}
-  //           fontSize={"1.5rem"}
-  //         >
-  //           Discover the profound joy of giving back as a volunteer, you’ll
-  //           touch lives, create bonds, and be a force for positive change.
-  //           <span className="red-text"> Join us today! </span>
-  //         </Typography>
-  //         <Button
-  //           variant="outlined"
-  //           sx={{
-  //             margin: 1,
-  //             borderColor: "var(--brown)",
-  //             color: "var(--brown)",
-  //             "&:hover": {
-  //               borderColor: "var(--brown)",
-  //               color: "var(--black)",
-  //             },
-  //           }}
-  //         >
-  //           Join us
-  //         </Button>
-  //       </Grid>
-  //       <Grid
-  //         xs
-  //         item
-  //         sx={{
-  //           display: "flex",
-  //           justifyContent: "center",
-  //         }}
-  //       >
-  //         <img className="join-us-img" src="joinus.png" width={"450vh"} />
-  //       </Grid>
-  //     </Grid>
-  //   </>
-  // );
 }
 
 export default JoinUs;

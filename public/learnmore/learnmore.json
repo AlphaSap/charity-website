@@ -1,0 +1,51 @@
+{
+  "Welcome": {
+    "name": "Dholar Community",
+    "text": "Thank you for visiting Dholar Community, where compassion meets action, and hope is a shared commitment. As a Muslim charity organization, we stand united in our mission to extend a helping hand to those affected by natural disasters and crises, irrespective of their background or beliefs. Our journey is guided by the principles of empathy, unity, and the Islamic values of charity, driving us to make a positive impact on the lives of those facing adversity."
+  },
+  "mission": "At Dholar Community, our mission is both simple and profound: to alleviate the suffering of those facing adversity, to provide relief in times of calamity, and to foster a sense of community that transcends borders and differences. We firmly believe that everyone, regardless of their circumstances, deserves the basic necessities of life and the support to rebuild their lives in the aftermath of disaster.",
+  "campaigns": [
+    {
+      "name": "Turkey Earthquake Relief",
+      "text": "In response to the devastating earthquakes in Turkey and Syria, Dholar Community swiftly mobilized its resources to extend a helping hand to the affected communities. Our dedicated team worked tirelessly to provide essential aid.",
+      "helps": [
+        {
+          "item": "Food",
+          "text": "Nutrient-rich meals to sustain individuals and families during challenging times."
+        },
+        {
+          "item": "Water",
+          "text": "Clean and safe drinking water to prevent waterborne diseases and ensure hydration."
+        },
+        {
+          "item": "Medical Supplies",
+          "text": "Basic healthcare necessities to address injuries and prevent the spread of illnesses."
+        },
+        {
+          "item": "Shelter",
+          "text": "Temporary shelters to offer protection from the elements and ensure a secure living space."
+        }
+      ],
+      "footer": "Through this campaign, we aimed not only to meet immediate needs but also to offer a glimmer of hope to those grappling with the aftermath of a natural disaster."
+    },
+    {
+      "name": "Morocco Earthquake campaign",
+      "text": "Our most recent campaign took us to Morocco, where an earthquake left communities in distress. Dholar Community stepped up to provide vital assistance, including the distribution of:",
+      "helps": [
+        {
+          "item": "Essential Supplies",
+          "text": "Basic necessities to help individuals and families cope with the immediate aftermath of the earthquake."
+        },
+        {
+          "item": "Medical Supplies",
+          "text": "Support to address injuries and health concerns caused by the disaster."
+        },
+        {
+          "item": "Rebuilding Support",
+          "text": "Assistance to help communities rebuild and regain a sense of normalcy."
+        }
+      ],
+      "footer": "Our commitment to standing by those in need remains unwavering, and we strive to make a lasting impact on the lives of individuals and families facing the challenges of displacement and destruction."
+    }
+  ]
+}

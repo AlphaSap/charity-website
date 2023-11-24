@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import CustomCard from "./card/CustomCard";
 import { useEffect, useState } from "react";
 import "./Campaigns.css";
@@ -31,24 +31,37 @@ function Campaign() {
   };
   useEffect(() => cards(), []);
 
-  // <Grid container xs="auto" direction="row" spacing={2} sx={{ flexGrow: 1, width: '100%'}} >
-  // </Grid>
-  // <CustomCard name={cc.name} text={cc.text} date={cc.date} />
-  // <CustomCard name={cc.name} text={cc.text} date={cc.date} />
-  // <CustomCard name={cc.name} text={cc.text} date={cc.date} />
   return (
     <>
+
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: 'center',
+          alignContent: 'center',
+          paddingTop: 2
+        }}
+      >
+      <Typography variant="h4" fontFamily={'var(--font-fam)'} >
+          Our Campaigns
+      </Typography>
+      </Box>
       <Box
         display="flex"
         justifyContent="center"
         alignItems="center"
-        marginTop={5}
         marginBottom={5}
       >
         <div className="grid-container">
-          {
-            cc.map((value, index) => <CustomCard name={value.name} text={value.text} date={value.date} key={index} />)
-          }
+          {cc.map((value, index) => (
+            <CustomCard
+              name={value.name}
+              text={value.text}
+              date={value.date}
+              key={index}
+              image={value.image}
+            />
+          ))}
         </div>
       </Box>
     </>

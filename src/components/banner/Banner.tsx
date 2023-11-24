@@ -41,6 +41,7 @@ function Banner() {
                 Join Now!
               </Button>
             </CustomLink>
+            <CustomLink to="/about">
             <Button
               variant="outlined"
               sx={{
@@ -54,6 +55,7 @@ function Banner() {
             >
               Learn More
             </Button>
+            </CustomLink>
           </Stack>
         </Box>
         <span className="banner-img-container">

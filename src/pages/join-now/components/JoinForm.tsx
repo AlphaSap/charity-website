@@ -1,5 +1,5 @@
 import {
-    Alert,
+  Alert,
   Autocomplete,
   Backdrop,
   Box,
@@ -99,7 +99,7 @@ function JoinForm() {
       if (go_back) {
         history("/");
       } else {
-        setAlert(true)
+        setAlert(true);
       }
     }, 1000);
 
@@ -122,10 +122,12 @@ function JoinForm() {
           <Typography
             variant="h4"
             fontFamily={"var(--font-fam)"}
+            fontWeight={"bold"}
             sx={{
               color: "var(--black)",
               alignItems: "center",
               justifySelf: "center",
+              textDecoration: "underline",
             }}
           >
             Join Dholar Community
@@ -380,7 +382,10 @@ function JoinForm() {
               Submit{" "}
             </Button>
             <Backdrop
-              sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+              sx={{
+                color: "#fff",
+                zIndex: (theme) => theme.zIndex.drawer + 1,
+              }}
               open={open}
             >
               <CircularProgress color="inherit" />

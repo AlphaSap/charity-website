@@ -17,15 +17,15 @@ function getTheme() {
         },
       },
       body1: {
-        color: 'var(--black)',
-        "@media (max-width: 420px)": {
-          fontSize: "1.1rem",
-        },
+        // color: 'var(--black)',
+        // "@media (max-width: 420px)": {
+        //   fontSize: "1.1rem",
+        // },
       },
       h2: {
         color: 'var(--black)',
         "@media (max-width: 420px)": {
-          fontSize: "1.6rem",
+          fontSize: "2rem",
         },
       },
     },
