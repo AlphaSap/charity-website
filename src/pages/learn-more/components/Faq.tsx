@@ -9,7 +9,7 @@ import {
 import { ReactNode, useState } from "react";
 
 function Faq() {
-  const [expanded, setEx] = useState(0);
+  const [expanded, setEx] = useState(-1);
 
   const handleChange = (panel: any) => (_event: any, newExpanded: any) => {
     setEx(newExpanded ? panel : false);
