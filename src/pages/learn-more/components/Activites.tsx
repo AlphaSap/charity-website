@@ -1,4 +1,4 @@
-import { Box, Paper } from "@mui/material"
+import { Box} from "@mui/material"
 
 function Activites(prop: { image: string }) {
   const d = "url(".concat(prop.image).concat(")");
@@ -11,13 +11,5 @@ function Activites(prop: { image: string }) {
   )
 }
 
-const imgdata = () => {
-  return [
-    {
-      name: "Turkey",
-      image: ''
-    }
-  ]
-} 
 
 export default Activites

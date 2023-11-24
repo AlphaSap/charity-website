@@ -1,5 +1,5 @@
-import { ReactNode, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { ReactNode, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 
 interface CustomLinkProp {

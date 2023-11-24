@@ -1,4 +1,4 @@
-import { Typography, Box, Stack, colors } from "@mui/material";
+import { Typography, Stack } from "@mui/material";
 import "./LearnMoreHeader.css";
 
 function LearnMoreHeader() {

@@ -1,8 +1,4 @@
-import {
-  ExpandMore,
-  ArrowForwardSharp,
-  ExpandMoreRounded,
-} from "@mui/icons-material";
+import { ExpandMoreRounded } from "@mui/icons-material";
 import {
   Accordion,
   AccordionSummary,
@@ -15,7 +11,7 @@ import { ReactNode, useState } from "react";
 function Faq() {
   const [expanded, setEx] = useState(0);
 
-  const handleChange = (panel) => (event, newExpanded) => {
+  const handleChange = (panel: any) => (_event: any, newExpanded: any) => {
     setEx(newExpanded ? panel : false);
   };
 
@@ -41,7 +37,10 @@ function Faq() {
           <Typography>{x.question}</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>{x.answer}{x.children}</Typography>
+          <Typography>
+            {x.answer}
+            {x.children}
+          </Typography>
         </AccordionDetails>
       </Accordion>
     );
@@ -73,11 +72,13 @@ type FaqObj = {
 const faqs: FaqObj[] = [
   {
     question: "Where does my donation go?",
-    answer: "Rest assured, every penny of your donation directly impacts those in need. Dholar Community is proud to commit 100% of your contribution to providing essential aid, including food, water, shelter, medical assistance, and long-term community development. Transparency and your trust are paramount in our mission to make a meaningful difference in the lives of those facing crises. "
+    answer:
+      "Rest assured, every penny of your donation directly impacts those in need. Dholar Community is proud to commit 100% of your contribution to providing essential aid, including food, water, shelter, medical assistance, and long-term community development. Transparency and your trust are paramount in our mission to make a meaningful difference in the lives of those facing crises. ",
   },
   {
     question: "What is the donation policy",
-    answer: "At Dholar Community, we deeply appreciate and rely on the generous support of individuals and organizations committed to our mission. Your donations play a crucial role in enabling us to provide essential aid to those in need. To ensure transparency and clarity, we have outlined our donation policy [here]",
+    answer:
+      "At Dholar Community, we deeply appreciate and rely on the generous support of individuals and organizations committed to our mission. Your donations play a crucial role in enabling us to provide essential aid to those in need. To ensure transparency and clarity, we have outlined our donation policy [here]",
   },
 
   {
@@ -90,8 +91,9 @@ const faqs: FaqObj[] = [
   },
   {
     question: "What types of humanitarian aid does Dholar Community provide?",
-    answer: "Dholar Community provides vital humanitarian aid, including emergency relief, food, clean water, shelter, medical assistance, livelihood programs, and psychosocial services. Our comprehensive approach aims to address immediate needs while fostering long-term resilience"
-  }
+    answer:
+      "Dholar Community provides vital humanitarian aid, including emergency relief, food, clean water, shelter, medical assistance, livelihood programs, and psychosocial services. Our comprehensive approach aims to address immediate needs while fostering long-term resilience",
+  },
 ];
 
 export default Faq;
