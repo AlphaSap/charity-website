@@ -1,4 +1,4 @@
-import { Alert, Box, Button, Snackbar, Stack, Typography } from "@mui/material";
+import { Alert, Box, Button, Snackbar, Typography } from "@mui/material";
 import { useState } from "react";
 import "./NewsLetter.css";
 
