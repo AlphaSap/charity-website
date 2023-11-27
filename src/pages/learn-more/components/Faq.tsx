@@ -74,6 +74,9 @@ const faqs: FaqObj[] = [
     question: "Where does my donation go?",
     answer:
       "Rest assured, every penny of your donation directly impacts those in need. Dholar Community is proud to commit 100% of your contribution to providing essential aid, including food, water, shelter, medical assistance, and long-term community development. Transparency and your trust are paramount in our mission to make a meaningful difference in the lives of those facing crises. ",
+    children: (
+      <a href="#">hel</a>
+    )
   },
   {
     question: "What is the donation policy",

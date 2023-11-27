@@ -13,3 +13,17 @@
   margin-right: 5px;
   margin-bottom: 10px;
 }
+
+@media (max-width: 760px) {
+  .news-input {
+    padding-left: 20px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 375px) {
+  .news-input {
+    width: 100%;
+  }
+}

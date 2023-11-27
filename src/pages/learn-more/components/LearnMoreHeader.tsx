@@ -12,7 +12,11 @@ function LearnMoreHeader() {
         }}
         gap={2}
       >
-        <Typography variant="h2" sx={{ fontWeight: "bold" }}>
+        <Typography fontSize={{
+          sm: "3rem",
+          xs: "1.5rem",
+          md: "4rem"
+        }} sx={{ fontWeight: "bold" }}>
           <span className="text-green">Dholar</span>{" "}
           <span className="text-brown">Community</span>
         </Typography>
@@ -43,7 +47,9 @@ function LearnMoreHeader() {
             driving us to make a positive impact on the lives of those facing
             adversity.
           </Typography>
-          <img src="hero.png" />
+          <span className="hero-container">
+            <img className="hero-img" src="hero.png" />
+          </span>
         </Stack>
       </Stack>
     </>

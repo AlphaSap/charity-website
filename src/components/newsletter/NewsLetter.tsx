@@ -1,4 +1,4 @@
-import { Alert, Box, Button, Snackbar, Typography } from "@mui/material";
+import { Alert, Box, Button, Snackbar, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import "./NewsLetter.css";
 
@@ -30,8 +30,7 @@ function NewsLetter() {
           SIGN UP TO OUR NEWSLETTER
         </Typography>
 
-        <Box >
-
+          <Box>
         <input
           placeholder="ENTER YOUR EMAIL"
           type="text"
@@ -55,7 +54,7 @@ function NewsLetter() {
         >
           SIGN UP
         </Button>
-        </Box >
+        </Box>
         <Snackbar
           autoHideDuration={1500}
           open={al}

@@ -12,6 +12,6 @@
   .join-us-img {
     margin: 0;
     object-fit: cover;
-    width: 310px;
+    width: 100%;
   }
 }
