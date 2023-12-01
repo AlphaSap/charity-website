@@ -4,6 +4,7 @@ import Footer from "../../components/footer/Footer.tsx";
 import LearnMoreHeader from "./components/LearnMoreHeader.tsx";
 import NewsLetter from "../../components/newsletter/NewsLetter.tsx";
 import Faq from "./components/Faq.tsx";
+import Mission from "./components/Mission.tsx";
 
 function LearnMore() {
   return (
@@ -14,6 +15,8 @@ function LearnMore() {
       <LearnMoreHeader />
       <Divider />
       <Faq />
+      <Divider />
+      <Mission />
       <NewsLetter />
       <Footer />
     </>

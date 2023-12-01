@@ -5,6 +5,7 @@ import {
   AccordionDetails,
   Stack,
   Typography,
+  Box,
 } from "@mui/material";
 import { ReactNode, useState } from "react";
 
@@ -48,9 +49,20 @@ function Faq() {
 
   return (
     <>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          paddingTop: 3,
+        }}
+      >
+        <Typography variant="h3">Frequently Asked Question!</Typography>
+      </Box>
       <Stack
         sx={{
           marginTop: 3,
+          marginBottom: 5,
           paddingX: {
             xs: 4,
             md: 10,
@@ -74,9 +86,7 @@ const faqs: FaqObj[] = [
     question: "Where does my donation go?",
     answer:
       "Rest assured, every penny of your donation directly impacts those in need. Dholar Community is proud to commit 100% of your contribution to providing essential aid, including food, water, shelter, medical assistance, and long-term community development. Transparency and your trust are paramount in our mission to make a meaningful difference in the lives of those facing crises. ",
-    children: (
-      <a href="#">hel</a>
-    )
+    children: <a href="#">hel</a>,
   },
   {
     question: "What is the donation policy",
