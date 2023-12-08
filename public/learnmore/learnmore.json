@@ -7,7 +7,7 @@
   "campaigns": [
     {
       "name": "Turkey Earthquake Relief",
-      "text": "In response to the devastating earthquakes in Turkey and Syria, Dholar Community swiftly mobilized its resources to extend a helping hand to the affected communities. Our dedicated team worked tirelessly to provide essential aid.",
+      "text": "In response to the devastating earthquakes in Turkey, Dholar Community swiftly mobilized its resources to extend a helping hand to the affected communities. Our dedicated team worked tirelessly to provide essential aid.",
       "helps": [
         {
           "item": "Food",

@@ -1,20 +1,18 @@
 [
-{
+  {
     "image": "current.png",
     "name": "Moroco earthquake",
     "text": "skhdjlajsdhalksjd fldaksfh lksjdfhsdlkjfh lksjdfhklsjdfhkl jshfklsdjhfksjd fhklsjdhfkldjsfh skljd",
     "date": "2011-04-11T10:20:30Z",
     "peopleHelped": 69,
     "moneyRaised": 5000
-
   },
   {
-
     "image": "help.jpg",
-    "name": "Turkey and Syria earthquake",
+    "name": "Turkey earthquake",
     "text": "skhdjlajsdhalksjd fldaksfh lksjdfhsdlkjfh lksjdfhklsjdfhkl jshfklsdjhfksjd fhklsjdhfkldjsfh skljd",
     "date": "2023-04-11T10:20:30Z",
     "peopleHelped": 42,
-    "moneyRaised": 10000 
+    "moneyRaised": 10000
   }
 ]
