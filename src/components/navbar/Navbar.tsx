@@ -82,7 +82,13 @@ export default function MyNav(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <Tab icon={<CustomLink to="/"><img src="logo.svg"></img> </CustomLink>} />
+          <Tab
+            icon={
+              <CustomLink to="/">
+                <img src="logo.svg"></img>{" "}
+              </CustomLink>
+            }
+          />
           <Typography
             variant="h6"
             component="div"
