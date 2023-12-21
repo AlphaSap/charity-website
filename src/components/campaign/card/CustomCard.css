@@ -6,7 +6,7 @@
 .card-title {
   margin: 0;
   position: relative;
-  vertical-align: top
+  vertical-align: top;
 }
 
 .card-conatainer {
@@ -16,4 +16,12 @@
 
 .card-conatainer {
   display: flex;
+}
+
+.card-text-content {
+  font-family: var(--font-fam);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

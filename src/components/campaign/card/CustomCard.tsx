@@ -14,7 +14,6 @@ interface CardProp {
   image: string;
 }
 
-// <Grid item margin={3} flexGrow={200}>
 function CustomCard(card: CardProp) {
   return (
     <>
@@ -29,9 +28,7 @@ function CustomCard(card: CardProp) {
           <Typography gutterBottom variant="h5" component="div">
             {card.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {card.text}
-          </Typography>
+          <p className="card-text-content">{card.text}</p>
           <CardInformation />
         </CardContent>
         <CardActions sx={{ marginTop: "auto" }}>
