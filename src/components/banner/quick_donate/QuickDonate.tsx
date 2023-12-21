@@ -3,18 +3,16 @@ import "./QuickDonate.css";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { startTransition, useState } from "react";
+import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import Box from "@mui/material/Box";
 import {
   Modal,
   Stack,
-  TextField,
   ThemeProvider,
   Typography,
   createTheme,
 } from "@mui/material";
-import { green } from "@mui/material/colors";
 
 const theme = createTheme({
   typography: {
