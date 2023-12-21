@@ -16,7 +16,7 @@ function Faq() {
     setEx(newExpanded ? panel : false);
   };
 
-  let q = faqs.map((x, i) => {
+  const q = faqs.map((x, i) => {
     return (
       <Accordion
         key={i}
@@ -57,7 +57,15 @@ function Faq() {
           paddingTop: 3,
         }}
       >
-        <Typography variant="h3">Frequently Asked Question!</Typography>
+        <Typography
+          fontSize={{
+            xs: "1.4rem",
+            md: "2.5rem",
+          }}
+          sx={{ fontWeight: "bold" }}
+        >
+          Frequently Asked Question(FAQs)!
+        </Typography>
       </Box>
       <Stack
         sx={{

@@ -6,7 +6,11 @@ import {
   Button,
   CircularProgress,
   Divider,
+  FormControl,
   Grid,
+  InputLabel,
+  MenuItem,
+  Select,
   Snackbar,
   TextField,
   ThemeProvider,
@@ -32,6 +36,10 @@ type PersonalInformation = {
   phone?: InformationField<string>;
 };
 
+type AreaOfIntrest = {
+  areaOfIntrest: InformationField<string>;
+};
+
 type InformationField<T> = {
   value?: T;
   error: boolean;
@@ -49,6 +57,10 @@ type AddressInformation = {
 function JoinForm() {
   const [open, setOpen] = useState(false);
   const history = useNavigate();
+
+  const [aoi, setAoi] = useState<AreaOfIntrest>({
+    areaOfIntrest: { error: false, value: "" },
+  });
 
   const [personal_info, setPI] = useState<PersonalInformation>({
     firstname: { error: false, value: "" },
@@ -94,6 +106,15 @@ function JoinForm() {
       }
     }
 
+    for (const a in aoi) {
+      //@ts-ignore
+      const oldInfo: AreaOfIntrest<string> = aoi[a];
+      if (oldInfo.value === "" || oldInfo.value === undefined) {
+        oldInfo.error = true;
+        go_back = false;
+      }
+    }
+
     setTimeout(function () {
       handleClose();
       if (go_back) {
@@ -102,16 +123,14 @@ function JoinForm() {
         setAlert(true);
       }
     }, 1000);
-
-    console.log("Before");
   };
   const handleClose = () => {
     setOpen(false);
   };
 
-  return (
-    <>
-      <ThemeProvider theme={theme}>
+  let title = () => {
+    return (
+      <>
         <Box
           sx={{
             display: "flex",
@@ -133,6 +152,14 @@ function JoinForm() {
             Join Dholar Community
           </Typography>
         </Box>
+      </>
+    );
+  };
+
+  return (
+    <>
+      <ThemeProvider theme={theme}>
+        {title()}
         <Grid
           container
           spacing={2}
@@ -210,6 +237,7 @@ function JoinForm() {
               value={personal_info.phone?.value}
               component={TextField}
               country={"gb"}
+              label="Phone Number"
               placeholder=""
               onChange={(e) => {
                 setPI((prev) => ({
@@ -219,6 +247,46 @@ function JoinForm() {
                 }));
               }}
             />
+          </Grid>
+          <Grid item xs={12}>
+            <Divider />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="h6" fontFamily={"var(--font-fam)"}>
+              Select Which area you would like to join!
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <FormControl fullWidth>
+              <InputLabel
+                error={aoi.areaOfIntrest.error}
+                id="demo-select-small-label"
+              >
+                Area of intrest *
+              </InputLabel>
+              <Select
+                error={aoi.areaOfIntrest.error}
+                required
+                labelId="demo-select-small-label"
+                id="demo-select-small"
+                label="Area of intrest"
+                value={aoi.areaOfIntrest.value}
+                onChange={function (event) {
+                  let s: string = event.target.value;
+                  let a: AreaOfIntrest = {
+                    areaOfIntrest: { error: false, value: s },
+                  };
+                  setAoi(a);
+                }}
+              >
+                <MenuItem value="General">
+                  <em>General</em>
+                </MenuItem>
+                <MenuItem value="Campains">Campains</MenuItem>
+                <MenuItem value="Supply">Supply</MenuItem>
+                <MenuItem value="Donation">Donation</MenuItem>
+              </Select>
+            </FormControl>
           </Grid>
           <Grid item xs={12}>
             <Divider />

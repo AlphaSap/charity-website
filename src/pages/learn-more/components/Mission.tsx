@@ -20,7 +20,13 @@ function Mission() {
           }}
         >
           <Box sx={{ alignItems: "center" }}>
-            <Typography variant="h3" sx={{ marginBottom: 2 }}>
+            <Typography
+              fontSize={{
+                xs: "1.6rem",
+                md: "2.5rem",
+              }}
+              sx={{ marginBottom: 2, fontWeight: "bold" }}
+            >
               Our Mission
             </Typography>
             <Typography>

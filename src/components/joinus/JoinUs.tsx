@@ -32,11 +32,11 @@ function JoinUs() {
               margin={1}
               fontSize={"1.2rem"}
             >
-              Together, let's create a world where 
-              compassion knows no bounds, and every individual can find solace
-              in the helping hands of a caring community.
-              Discover the profound joy of giving back as a volunteer, you’ll
-              touch lives, create bonds, and be a force for positive change.
+              Together, let's create a world where compassion knows no bounds,
+              and every individual can find solace in the helping hands of a
+              caring community. Discover the profound joy of giving back as a
+              volunteer, you’ll touch lives, create bonds, and be a force for
+              positive change.
               <span className="red-text"> Join us today! </span>
             </Typography>
           </ThemeProvider>
@@ -55,12 +55,17 @@ function JoinUs() {
                 marginBottom: 3,
               }}
             >
-            Become a volunteer
+              Become a volunteer
             </Button>
           </CustomLink>
         </Box>
         <span className="img-con">
-          <img className="join-us-img" src="joinus.png" width={"450vh"} />
+          <img
+            className="join-us-img"
+            loading="lazy"
+            src="joinus.png"
+            width={"450vh"}
+          />
         </span>
       </Stack>
     </>

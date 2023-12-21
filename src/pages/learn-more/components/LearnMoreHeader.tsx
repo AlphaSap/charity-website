@@ -12,11 +12,14 @@ function LearnMoreHeader() {
         }}
         gap={2}
       >
-        <Typography fontSize={{
-          sm: "3rem",
-          xs: "1.5rem",
-          md: "4rem"
-        }} sx={{ fontWeight: "bold" }}>
+        <Typography
+          fontSize={{
+            sm: "3rem",
+            xs: "1.6rem",
+            md: "4rem",
+          }}
+          sx={{ fontWeight: "bold" }}
+        >
           <span className="text-green">Dholar</span>{" "}
           <span className="text-brown">Community</span>
         </Typography>

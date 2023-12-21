@@ -19,7 +19,12 @@ function CustomCard(card: CardProp) {
   return (
     <>
       <Card sx={{ maxWidth: 345 }}>
-        <CardMedia sx={{ height: 250, objectFit: 'contain' }} image={card.image} title={card.name} />
+        <CardMedia
+          sx={{ height: 250, objectFit: "cover" }}
+          image={card.image}
+          title={card.name}
+          component="img"
+        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {card.name}
@@ -43,7 +48,6 @@ function CustomCard(card: CardProp) {
       </Card>
     </>
   );
-  // </Grid>
 }
 
 function isDateBeforeToday(date: Date) {

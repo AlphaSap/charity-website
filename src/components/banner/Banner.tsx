@@ -42,24 +42,29 @@ function Banner() {
               </Button>
             </CustomLink>
             <CustomLink to="/about">
-            <Button
-              variant="outlined"
-              sx={{
-                borderColor: "var(--brown)",
-                color: "var(--brown)",
-                "&:hover": {
+              <Button
+                variant="outlined"
+                sx={{
                   borderColor: "var(--brown)",
-                  color: "var(--black)",
-                },
-              }}
-            >
-              Learn More
-            </Button>
+                  color: "var(--brown)",
+                  "&:hover": {
+                    borderColor: "var(--brown)",
+                    color: "var(--black)",
+                  },
+                }}
+              >
+                Learn More
+              </Button>
             </CustomLink>
           </Stack>
         </Box>
         <span className="banner-img-container">
-          <img className="banner-img" src="banner.jpg" width={500} />
+          <img
+            className="banner-img"
+            src="banner.jpg"
+            loading="eager"
+            width={500}
+          />
         </span>
       </div>
       <QuickDonate />
