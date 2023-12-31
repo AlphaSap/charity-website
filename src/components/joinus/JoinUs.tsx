@@ -63,7 +63,7 @@ function JoinUs() {
           <img
             className="join-us-img"
             loading="lazy"
-            src="joinus.png"
+            src="remain-final.jpeg"
             width={"450vh"}
           />
         </span>

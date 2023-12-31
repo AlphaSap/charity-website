@@ -9,6 +9,9 @@
 
 .banner-img {
   padding: 20px;
+  display: inline-block; /* change the default display type to inline-block */
+  overflow: hidden;
+  overflow: hidden;
 }
 
 @media (max-width: 760px) {
@@ -23,4 +26,3 @@
     padding: 10px;
   }
 }
-

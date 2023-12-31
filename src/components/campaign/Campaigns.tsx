@@ -10,6 +10,7 @@ type Incident = {
   date: string;
   peopleHelped: number;
   moneyRaised: number;
+  learnMoreRe: string;
 };
 
 function Campaign() {
@@ -19,6 +20,7 @@ function Campaign() {
       name: "",
       text: "",
       date: "",
+      learnMoreRe: "",
       peopleHelped: 0,
       moneyRaised: 0,
     },
@@ -33,18 +35,17 @@ function Campaign() {
 
   return (
     <>
-
       <Box
         sx={{
           display: "flex",
-          justifyContent: 'center',
-          alignContent: 'center',
-          paddingTop: 2
+          justifyContent: "center",
+          alignContent: "center",
+          paddingTop: 2,
         }}
       >
-      <Typography variant="h4" fontFamily={'var(--font-fam)'} >
+        <Typography variant="h4" fontFamily={"var(--font-fam)"}>
           Our Campaigns
-      </Typography>
+        </Typography>
       </Box>
       <Box
         display="flex"
@@ -60,6 +61,7 @@ function Campaign() {
               date={value.date}
               key={index}
               image={value.image}
+              learnMoreRe={value.learnMoreRe}
             />
           ))}
         </div>

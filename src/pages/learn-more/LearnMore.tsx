@@ -14,9 +14,9 @@ function LearnMore() {
       <Toolbar />
       <LearnMoreHeader />
       <Divider />
-      <Faq />
-      <Divider />
       <Mission />
+      <Divider />
+      <Faq />
       <NewsLetter />
       <Footer />
     </>

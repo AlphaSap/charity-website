@@ -25,6 +25,14 @@ const router = createBrowserRouter([
     path: "/about",
     element: <LearnMore />,
   },
+  {
+    path: "incident/morocco",
+    element: <h1> Hellw </h1>,
+  },
+  {
+    path: "incident/turkey",
+    element: <h1> Hellw </h1>,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

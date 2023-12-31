@@ -6,12 +6,14 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CardMedia from "@mui/material/CardMedia";
 import CardInformation from "./cardInformation/CardInformation";
+import CustomLink from "../../CustomLink";
 
 interface CardProp {
   name: string;
   text: string;
   date: string;
   image: string;
+  learnMoreRe: string;
 }
 
 function CustomCard(card: CardProp) {
@@ -33,13 +35,14 @@ function CustomCard(card: CardProp) {
         </CardContent>
         <CardActions sx={{ marginTop: "auto" }}>
           <Button size="small">donate</Button>
-          <Button size="small">Learn More</Button>
+          <CustomLink to={card.learnMoreRe}>
+            <Button size="small">Learn More</Button>
+          </CustomLink>
           <Button
             size="small"
             disabled={isDateBeforeToday(new Date(card.date))}
           >
-            {" "}
-            Join expedition{" "}
+            Join expedition
           </Button>
         </CardActions>
       </Card>
