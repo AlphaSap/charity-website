@@ -38,7 +38,7 @@ function Hero() {
       .then((res) => res.json())
       .then((res) => setCard(res));
 
-    fetch("http://127.0.0.1:8080/images")
+    fetch("http://172.232.171.21:8080/images")
       .then((res) => {
         return res.json();
       })
