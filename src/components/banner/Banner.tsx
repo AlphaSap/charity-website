@@ -61,7 +61,7 @@ function Banner() {
         <span className="banner-img-container">
           <img
             className="banner-img"
-            src="exp/IMG-20231211-WA0004.jpg"
+            src="exp/moro/IMG-20231211-WA0004.jpg"
             loading="eager"
             width={500}
           />

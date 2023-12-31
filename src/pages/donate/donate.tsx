@@ -1,5 +1,11 @@
+import Navbar from "../../components/navbar/Navbar";
+
 function Donate() {
-  return <></>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
 
 export default Donate;

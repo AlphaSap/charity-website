@@ -7,6 +7,7 @@ import Donate from "./pages/donate/donate.tsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LearnMore from "./pages/learn-more/LearnMore.tsx";
+import { TurkeyApp } from "./pages/incident/turkey/TurkeyApp.tsx";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
   },
   {
     path: "incident/turkey",
-    element: <h1> Hellw </h1>,
+    element: <TurkeyApp />,
   },
 ]);
 
