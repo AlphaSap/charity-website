@@ -25,6 +25,10 @@ const steps = [
     label: "Select campaign settings",
     img: `/caro/1.jpg`,
   },
+  {
+    label: "Select campaign settings",
+    img: `/caro/5.jpg`,
+  },
 ];
 
 export default function TextMobileStepper() {
