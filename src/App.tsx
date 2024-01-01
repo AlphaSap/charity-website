@@ -11,6 +11,22 @@ import SwipeableTextMobileStepper from "./components/campaign/imager/CarouselIma
 // import CarAgain from "./components/campaign/imager/CarAgain";
 
 function App() {
+  const steps = [
+    `/caro/4.jpg`,
+    `/caro/3.jpg`,
+    `/caro/2.jpg`,
+    `/caro/1.jpg`,
+    `/caro/5.jpg`,
+  ];
+
+  const indi = [
+    `/caro/india/5.jpg`,
+    `/caro/india/4.jpg`,
+    `/caro/india/3.jpg`,
+    `/caro/india/2.jpg`,
+    `/caro/india/1.jpg`,
+  ];
+
   return (
     <>
       <MyNav />
@@ -21,7 +37,15 @@ function App() {
           <Banner />
           <Campaign />
           <Divider />
-          <SwipeableTextMobileStepper />
+          <SwipeableTextMobileStepper
+            imgs={steps}
+            name="Our Efforts in Morocco"
+          />
+          <Divider />
+          <SwipeableTextMobileStepper
+            imgs={indi}
+            name="Food Program in India"
+          />
           <Divider />
           <JoinUs />
           <NewsLetter />

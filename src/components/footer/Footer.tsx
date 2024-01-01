@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Link, Typography } from "@mui/material";
 import "./Footer.css";
-import { Facebook, GitHub, Instagram} from "@mui/icons-material";
+import { Facebook, GitHub, Instagram } from "@mui/icons-material";
 
 function Footer() {
   return (
@@ -24,7 +24,7 @@ function Footer() {
               17 Onra Road, London E17 8JD
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Email: info@example.com
+              Email: dholarcommunity@gmail.com
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Phone: +44 7392790187
@@ -44,22 +44,13 @@ function Footer() {
             >
               <Instagram />
             </Link>
-            <Link
-              href="https://github.com/AlphaSap/charity-website"
-              color="inherit"
-            >
-              <GitHub />
-            </Link>
           </Grid>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" color="text.primary" gutterBottom>
-              Repository
+              Created By
             </Typography>
 
-            <Link
-              href="https://github.com/AlphaSap/charity-website"
-              color="inherit"
-            >
+            <Link href="https://github.com/SaHHiiLL/" color="inherit">
               <GitHub />
             </Link>
           </Grid>

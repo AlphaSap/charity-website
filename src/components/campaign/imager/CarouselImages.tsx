@@ -8,33 +8,15 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import "./car.css";
 import { Stack, Typography } from "@mui/material";
 
-const steps = [
-  {
-    label: "Create an ad",
-    img: `/caro/4.jpg`,
-  },
-  {
-    label: "Create an ad group",
-    img: `/caro/3.jpg`,
-  },
-  {
-    label: "Select campaign settings",
-    img: `/caro/2.jpg`,
-  },
-  {
-    label: "Select campaign settings",
-    img: `/caro/1.jpg`,
-  },
-  {
-    label: "Select campaign settings",
-    img: `/caro/5.jpg`,
-  },
-];
+interface CaroProp {
+  imgs: string[];
+  name: string;
+}
 
-export default function TextMobileStepper() {
+export default function TextMobileStepper(p: CaroProp) {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = steps.length;
+  const maxSteps = p.imgs.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -88,10 +70,16 @@ export default function TextMobileStepper() {
   return (
     <>
       <Stack
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          pt: 2,
+        }}
+        gap={3}
       >
         <Typography fontFamily={"--var(font-fam)"} variant="h4">
-          Our Efforts in Morocco
+          {p.name}
         </Typography>
         <Box sx={{ paddingX: { xs: "2rem", md: "5rem" } }}>
           <Box
@@ -101,7 +89,7 @@ export default function TextMobileStepper() {
               alignItems: "center",
             }}
           >
-            <img src={steps[activeStep].img} className={"img-de-size"} />
+            <img src={p.imgs[activeStep]} className={"img-de-size"} />
           </Box>
           <NavigationButtons />
         </Box>
