@@ -14,6 +14,7 @@ interface CardProp {
   date: string;
   image: string;
   learnMoreRe: string;
+  money: Number;
 }
 
 function CustomCard(card: CardProp) {
@@ -31,7 +32,7 @@ function CustomCard(card: CardProp) {
             {card.name}
           </Typography>
           <p className="card-text-content">{card.text}</p>
-          <CardInformation />
+          <CardInformation money={card.money} date={card.date} />
         </CardContent>
         <CardActions sx={{ marginTop: "auto" }}>
           <Button size="small">donate</Button>

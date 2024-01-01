@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import "./car.css";
+import { Stack, Typography } from "@mui/material";
 
 const steps = [
   {
@@ -79,45 +80,26 @@ export default function TextMobileStepper() {
       </>
     );
   };
-  // <Box sx={{ marginBottom: 6 }}>
-  //   <Box sx={{ display: "flex", justifyContent: "center", paddingTop: 3 }}>
-  //     <Typography variant="h4" fontWeight={"bold"}>
-  //       Food Supply For Morocco
-  //     </Typography>
-  //   </Box>
-  //   <Stack
-  //     sx={{
-  //       display: "flex",
-  //       alignItems: "center",
-  //     }}
-  //   >
-  //     <Stack
-  //       sx={{
-  //         height: 255,
-  //         maxWidth: 400,
-  //         width: "100%",
-  //         objectFit: "fill",
-  //         display: "flex",
-  //       }}
-  //     >
-  //     </Stack>
-  //   </Stack>
-  // </Box>
 
   return (
     <>
-      <Box sx={{ display: " tf", paddingX: { xs: "2rem", md: "5rem" } }}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <img src={steps[activeStep].img} className={"img-de-size"} />
+      <Stack
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      >
+        <Typography>Our Efforts in Morocco</Typography>
+        <Box sx={{ paddingX: { xs: "2rem", md: "5rem" } }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img src={steps[activeStep].img} className={"img-de-size"} />
+          </Box>
+          <NavigationButtons />
         </Box>
-        <NavigationButtons />
-      </Box>
+      </Stack>
     </>
   );
 }

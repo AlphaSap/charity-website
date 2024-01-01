@@ -62,6 +62,7 @@ function Campaign() {
               key={index}
               image={value.image}
               learnMoreRe={value.learnMoreRe}
+              money={value.moneyRaised}
             />
           ))}
         </div>
