@@ -7,6 +7,8 @@ import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import Box from "@mui/material/Box";
 import {
+  Backdrop,
+  CircularProgress,
   Modal,
   Stack,
   ThemeProvider,
@@ -42,7 +44,12 @@ const style = {
 function QuickDonate() {
   const [amount, setAmount] = useState("");
   const [open, setOpen] = useState(false);
+
+  const [loading, setLoading] = useState(false);
   const handleClose = () => {
+    setOpen(false);
+  };
+  const handleCheckOut = () => {
     fetch("https://charity-web-server.vercel.app/checkout", {
       method: "POST",
       headers: {
@@ -58,11 +65,15 @@ function QuickDonate() {
         }
         return res.json().then((json) => Promise.reject(json));
       })
-      .then(({ url }) => (window.location = url))
+      .then(({ url }) => {
+        setLoading(false);
+        window.location = url;
+      })
       .catch((e) => {
         console.log(e);
       });
 
+    setLoading(true);
     setOpen(false);
   };
 
@@ -110,7 +121,7 @@ function QuickDonate() {
         marginTop={2}
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
-        <Button variant="contained" onClick={handleClose} sx={greenButton}>
+        <Button variant="contained" onClick={handleCheckOut} sx={greenButton}>
           To Checkout
         </Button>
         <Button
@@ -126,6 +137,12 @@ function QuickDonate() {
 
   return (
     <>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={loading}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <Modal
         open={open}
         sx={{
