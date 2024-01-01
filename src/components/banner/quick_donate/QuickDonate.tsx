@@ -50,9 +50,6 @@ function QuickDonate() {
   const [openCustom, setOpenCustom] = useState(false);
 
   const [loading, setLoading] = useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
   const handleCheckOut = () => {
     fetch("https://charity-web-server.vercel.app/checkout", {
       method: "POST",
@@ -103,14 +100,6 @@ function QuickDonate() {
       setOpen(true);
     }
   };
-
-  function isNumeric(str: any) {
-    if (typeof str != "string") return false; // we only process strings!
-    return (
-      !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
-      !isNaN(parseFloat(str))
-    );
-  }
 
   const handleCustomCheckOut = () => {
     console.log("lcajkh " + customAmount);
@@ -169,11 +158,7 @@ function QuickDonate() {
         marginTop={2}
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
-        <Button
-          variant="contained"
-          onClick={handleCustomCheckOut}
-          sx={greenButton}
-        >
+        <Button variant="contained" onClick={handleCheckOut} sx={greenButton}>
           To Checkout
         </Button>
         <Button
