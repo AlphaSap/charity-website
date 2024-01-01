@@ -6,7 +6,9 @@ import MyNav from "./components/navbar/Navbar";
 import { Box, Divider, Toolbar } from "@mui/material";
 import JoinUs from "./components/joinus/JoinUs";
 import NewsLetter from "./components/newsletter/NewsLetter";
-import { Qualities } from "./components/qualitiesAgain/Qualities";
+// import { Qualities } from "./components/qualitiesAgain/Qualities";
+import SwipeableTextMobileStepper from "./components/campaign/imager/CarouselImages";
+// import CarAgain from "./components/campaign/imager/CarAgain";
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
           <Toolbar />
           <Banner />
           <Campaign />
-          <Qualities />
+          <Divider />
+          <SwipeableTextMobileStepper />
           <Divider />
           <JoinUs />
           <NewsLetter />

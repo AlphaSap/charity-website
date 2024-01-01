@@ -9,6 +9,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LearnMore from "./pages/learn-more/LearnMore.tsx";
 import { TurkeyApp } from "./pages/incident/turkey/TurkeyApp.tsx";
 
+import "bootstrap/dist/css/bootstrap.css";
+
 const router = createBrowserRouter([
   {
     path: "/",

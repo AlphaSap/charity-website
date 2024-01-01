@@ -1,0 +1,11 @@
+.img-de-size {
+  height: 510px;
+  width: 800px;
+}
+
+@media (max-width: 900px) {
+  .img-de-size {
+    height: 255px;
+    width: 400px;
+  }
+}
