@@ -85,7 +85,7 @@ export default function MyNav(props: Props) {
           <Tab
             icon={
               <CustomLink to="/">
-                <img src="../../../public/logo.svg"></img>{" "}
+                <img src="/logo.svg"></img>{" "}
               </CustomLink>
             }
           />

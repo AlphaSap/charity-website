@@ -34,7 +34,7 @@ function Hero() {
   const [imgList, setImgList] = useState<string[]>([""]);
 
   const cards = () => {
-    fetch("../../../../../public/incident.json")
+    fetch("/incident.json")
       .then((res) => res.json())
       .then((res) => setCard(res));
 
