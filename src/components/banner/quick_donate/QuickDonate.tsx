@@ -42,7 +42,29 @@ const style = {
 function QuickDonate() {
   const [amount, setAmount] = useState("");
   const [open, setOpen] = useState(false);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    fetch("https://charity-web-server.vercel.app/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        amount: amount,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return res.json().then((json) => Promise.reject(json));
+      })
+      .then(({ url }) => (window.location = url))
+      .catch((e) => {
+        console.log(e);
+      });
+
+    setOpen(false);
+  };
 
   const handleChange = (event: SelectChangeEvent) => {
     setAmount(event.target.value as string);
@@ -148,11 +170,21 @@ function QuickDonate() {
               onChange={handleChange}
             >
               {/* Should change this to ids that match the backend later on, TODO  */}
-              <MenuItem value={"5"}>£5</MenuItem>
-              <MenuItem value={"10"}>£10</MenuItem>
-              <MenuItem value={"20"}>£20</MenuItem>
-              <MenuItem value={"50"}>£50</MenuItem>
-              <MenuItem value={"100"}>£100</MenuItem>
+              <MenuItem value={"5"} id="1">
+                £5
+              </MenuItem>
+              <MenuItem value={"10"} id="2">
+                £10
+              </MenuItem>
+              <MenuItem value={"20"} id="3">
+                £20
+              </MenuItem>
+              <MenuItem value={"50"} id="4">
+                £50
+              </MenuItem>
+              <MenuItem value={"100"} id="5">
+                £100
+              </MenuItem>
             </Select>
           </FormControl>
         </Box>
