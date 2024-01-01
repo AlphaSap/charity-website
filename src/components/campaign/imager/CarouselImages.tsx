@@ -90,7 +90,9 @@ export default function TextMobileStepper() {
       <Stack
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
-        <Typography>Our Efforts in Morocco</Typography>
+        <Typography fontFamily={"--var(font-fam)"} variant="h4">
+          Our Efforts in Morocco
+        </Typography>
         <Box sx={{ paddingX: { xs: "2rem", md: "5rem" } }}>
           <Box
             sx={{
